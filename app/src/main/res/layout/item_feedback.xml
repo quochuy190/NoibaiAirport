@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp5"
+    android:orientation="vertical">
+    <TextView
+        android:fontFamily="@font/palladiaroman"
+        android:textStyle="italic"
+        android:textSize="@dimen/text_13sp"
+        android:padding="@dimen/dp5"
+        android:id="@+id/txt_name_sent_fb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="@dimen/text_15sp"
+        android:fontFamily="@font/palladiaroman"
+        android:padding="@dimen/dp5"
+        android:id="@+id/txt_question_fb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

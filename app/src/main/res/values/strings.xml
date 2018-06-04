@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">NoibaiAirport</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_flight">Flight</string>
+    <string name="tab_booking">Booking</string>
+    <string name="tab_service">Service</string>
+    <string name="tab_shopdine">ShopsDine</string>
+    <string name="tab_tuongtac">Tuongtac</string>
+    <string name="tab_menu">Menu</string>
+    <!--Back notification-->
+    <string name="back_notification">Click again to exit</string>
+    <!--ngôn ngữ-->
+
+    <string name="txt_Eng">English</string>
+    <string name="txt_Vie">VietNam</string>
+    <!--dialog change language-->
+    <string name="txt_title_profile">Profile</string>
+    <string name="dialog_title">Language setting</string>
+    <string name="dialog_message">Are you sure you want to change the language of the application</string>
+    <string name="btn_ok">Ok</string>
+    <string name="btn_cancel">Cancel</string>
+    <!--change language-->
+    <string name="change_language_title">Language</string>
+
+    <!--flight-->
+    <string name="txt_flight_schedule">Flight schedule</string>
+    <string name="txt_airlines">Airlines information</string>
+    <string name="txt_flight_checkin">Check-in online</string>
+    <string name="txt_flight_booking">Flight booking online</string>
+    <string name="txt_flight_instruction">Flight Instruction</string>
+    <string name="txt_title_departures">Departures</string>
+    <string name="txt_title_arrivals">Arrivals</string>
+    <string name="txt_title_other">Other</string>
+    <string name="txt_filght_search">Search</string>
+    <string name="edt_filght_search"> Click for search</string>
+    <string name="edt_filght_id">Số hiệu máy bay</string>
+    <string name="edt_filght_address">Chọn điểm đến</string>
+    <string name="edt_filght_date">Hôm nay</string>
+    <string name="edt_filght_airline">Chọn hãng bay</string>
+    <string name="btn_search">Search</string>
+    <!--untranslatable-->
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_vietnamese" translatable="false">Tiếng Việt</string>
+
+    <string-array name="language_names">
+        <item>@string/language_english</item>
+        <item>@string/language_vietnamese</item>
+    </string-array>
+
+    <string name="language_english_code" translatable="false">en</string>
+    <string name="language_vietnamese_code" translatable="false">vi</string>
+
+    <string-array name="language_codes">
+        <item>@string/language_english_code</item>
+        <item>@string/language_vietnamese_code</item>
+    </string-array>
+    <!--title fragment menu-->
+    <string name="txt_loyalty_program">Loyalty program</string>
+    <string name="txt_evaluate">Evaluate and Comment</string>
+    <string name="txt_about">About</string>
+    <string name="txt_language">Language </string>
+    <string name="txt_map">Map</string>
+    <!--shops and dine-->
+    <string name="txt_shops">Shops</string>
+    <string name="txt_dine">Foot and Drinks</string>
+
+    <!--title-->
+    <string name="appbar_flightdetail">Flight Detail</string>
+</resources>

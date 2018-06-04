@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_contacts"
+    android:layout_width="match_parent"
+    android:background="@drawable/spr_item_language"
+    android:layout_height="@dimen/dp40"
+    android:orientation="horizontal"
+    >
+
+
+    <!--  ListRow Left sied Thumbnail image -->
+
+
+    <!-- Title Of Song-->
+    <TextView
+        android:layout_marginLeft="@dimen/dp5"
+        android:layout_centerVertical="true"
+        android:id="@+id/txt_name_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="English"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_17sp"
+        android:typeface="sans" />
+
+    <!-- Artist Name -->
+
+
+    <!-- Rightend Arrow -->
+    <CheckBox
+        android:layout_marginRight="@dimen/dp5"
+        android:theme="@style/checkBoxStyle"
+        android:id="@+id/cb_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusable="true"
+        android:focusableInTouchMode="false" />
+    <View
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue_vietnamairline"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1"></View>
+</RelativeLayout>

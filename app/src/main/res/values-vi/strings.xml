@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sân bay Nội Bài</string>
+    <string name="tab_home">Trang chủ</string>
+    <string name="tab_flight">Chuyến bay</string>
+    <string name="tab_booking">Booking</string>
+    <string name="tab_service">Dịch vụ</string>
+    <string name="tab_shopdine">Cửa hàng</string>
+    <string name="tab_tuongtac">Tương tác</string>
+    <string name="tab_menu">Menu</string>
+    <!--Back notification-->
+    <string name="back_notification">Bấm thêm lần nữa để thoát</string>
+    <!--ngôn ngữ-->
+    <string name="txt_language">Ngôn ngữ </string>
+    <string name="txt_Eng">Tiếng Anh</string>
+    <string name="txt_Vie">Tiếng Việt</string>
+    <string name="txt_title_profile">Cá nhân</string>
+    <!--dialog change language-->
+
+    <string name="dialog_title">Cài đặt ngôn ngữ</string>
+    <string name="dialog_message">Bạn có chắc chắn muốn thay đổi ngôn ngữ của ứng dụng!</string>
+    <string name="btn_ok">Đồng ý</string>
+    <string name="btn_cancel">Không</string>
+    <!--flight-->
+    <string name="txt_flight_schedule">Lịch trình chuyến bay</string>
+    <string name="txt_airlines">Thông tin các hãng hàng không</string>
+    <string name="txt_flight_checkin">Check-in trực tuyến</string>
+    <string name="txt_flight_booking">Mua vé máy bay trực tuyến</string>
+    <string name="txt_flight_instruction">Hướng dẫn quy định bay</string>
+    <string name="txt_title_departures">Chuyến bay đi</string>
+    <string name="txt_title_arrivals">Chuyến bay đến</string>
+    <string name="txt_title_other">Khác</string>
+
+    <!--title fragment menu-->
+    <string name="txt_loyalty_program">Kết nối dài lâu</string>
+    <string name="txt_evaluate">Đánh giá góp ý</string>
+    <string name="txt_about">Thông tin</string>
+    <string name="txt_map">Bản đồ sân bay</string>
+</resources>

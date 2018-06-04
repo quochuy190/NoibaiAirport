@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_marginRight="@dimen/dp5"
+    android:layout_marginBottom="@dimen/dp5"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/width_item_objservice"
+    android:layout_height="@dimen/height_item_objservice"   >
+    <ImageView
+        android:id="@+id/img_item_shops"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:src="@drawable/image"
+        android:layout_width="@dimen/width_item_objservice"
+        android:layout_height="@dimen/height_item_objservice"  />
+    <RelativeLayout
+        android:padding="@dimen/dp5"
+        android:background="@color/background_itemservice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="CÂY NƯỚC MIỄN PHÍ"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/dp5"
+            android:id="@+id/txt_item_shops_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_15sp" />
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

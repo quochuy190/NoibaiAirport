@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp45"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/app_bar">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            app:titleTextColor="@color/white"
+            app:theme="@style/ToolbarStyle"
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_gravity="center_horizontal"
+            android:baselineAligned="false">
+
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/txt_title_main"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:tint="@color/white"
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dp5"
+            android:src="@drawable/ic_back_default"
+            android:visibility="gone" />
+        <ImageView
+            android:tint="@color/white"
+            android:id="@+id/img_search"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dp5"
+            android:src="@drawable/ic_search"
+            android:visibility="gone" />
+        <ImageView
+            android:padding="@dimen/dp3"
+            android:id="@+id/img_chatbox"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp3"
+            android:src="@drawable/icon_chat" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.AppBarLayout>

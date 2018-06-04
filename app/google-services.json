@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "353941411882",
+    "firebase_url": "https://noibaiairport-c0092.firebaseio.com",
+    "project_id": "noibaiairport-c0092",
+    "storage_bucket": "noibaiairport-c0092.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353941411882:android:5bfbc6e338fb4ee1",
+        "android_client_info": {
+          "package_name": "neo.com.noibaiairport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353941411882-cka90cp46odbo69vepljl0ag1f2re3dv.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "353941411882-cka90cp46odbo69vepljl0ag1f2re3dv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIzQj1hONo9-j-r-ZduF0m1WVS7HRrAng"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

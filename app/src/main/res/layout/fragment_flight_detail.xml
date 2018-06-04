@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar_main"/>
+
+    <TextView
+        android:fontFamily="@font/font_times_new_roman"
+        android:id="@+id/txt_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp5"
+        android:layout_marginRight="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp5"
+        android:padding="@dimen/dp5"
+        android:text=""
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"/>
+
+    <LinearLayout
+        android:id="@+id/linear_datetime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_status">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:fontFamily="@font/palladiaroman"
+                android:id="@+id/txt_datetime_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:text=""
+                android:textColor="@color/app_bar"
+                android:textSize="@dimen/text_14sp" />
+
+            <TextView
+                android:fontFamily="@font/palladiaroman"
+                android:id="@+id/txt_time_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp1"
+                android:text=""
+                android:textColor="@color/app_bar"
+                android:textSize="@dimen/text_17sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:fontFamily="@font/palladiaroman"
+                android:id="@+id/txt_datetime_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:text=""
+                android:textColor="@color/app_bar"
+                android:textSize="@dimen/text_14sp" />
+
+            <TextView
+                android:fontFamily="@font/palladiaroman"
+                android:id="@+id/txt_time_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp1"
+                android:text=""
+                android:textColor="@color/app_bar"
+                android:textSize="@dimen/text_17sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_ic_flight"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="@dimen/dp30"
+        android:src="@drawable/ic_a"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_status" />
+
+
+    <TextView
+        android:id="@+id/txt_address_start"
+        android:layout_width="0dp"
+
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/palladiaroman"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/text_flight"
+        android:textSize="@dimen/text_25sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/txt_address_end"
+        app:layout_constraintTop_toBottomOf="@+id/img_ic_flight" />
+
+    <TextView
+        android:fontFamily="@font/palladiaroman"
+        android:id="@+id/txt_address_end"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/text_flight"
+        android:textSize="@dimen/text_25sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/txt_address_start"
+        app:layout_constraintTop_toBottomOf="@+id/img_ic_flight" />
+
+
+    <TextView
+        android:fontFamily="@font/palladiaroman"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txt_address_end"
+        app:layout_constraintBottom_toBottomOf="@id/txt_address_end"
+        android:id="@+id/txt_id_flight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="--"
+        android:textColor="@color/text_day_flight"
+        android:textSize="@dimen/text_15sp"
+    />
+
+    <TextView
+
+        android:id="@+id/txt_address_detail1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/palladiaroman"
+        android:gravity="center"
+        android:text="--"
+        android:textColor="@color/text_day_flight"
+        android:textSize="@dimen/text_14sp"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/txt_address_detail2"
+        app:layout_constraintTop_toBottomOf="@id/txt_id_flight" />
+
+    <TextView
+        android:id="@+id/txt_address_detail2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_times_new_roman"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/text_flight"
+        android:textSize="@dimen/text_15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/txt_address_detail1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_id_flight" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_checkin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/dp10"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/dp5"
+        app:cardElevation="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp5"
+        app:layout_constraintRight_toLeftOf="@id/cardview_security_time"
+        app:layout_constraintTop_toBottomOf="@id/txt_address_detail1"
+        android:layout_width="0dp"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:padding="@dimen/dp5"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="@dimen/text_13sp"
+                android:gravity="center_horizontal"
+                android:fontFamily="@font/palladiaroman"
+                android:textColor="@color/text_day_flight"
+                android:layout_centerHorizontal="true"
+                android:text="CHECK -  IN"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txt_checkin_number"
+                android:fontFamily="@font/palladiaroman"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_18sp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/text_flight"
+                android:layout_alignParentBottom="true"
+                android:text="-"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_security_time"
+        app:layout_constraintLeft_toRightOf="@id/cardview_checkin"
+        app:layout_constraintRight_toLeftOf="@id/cardview_boarding"
+
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/dp5"
+        app:cardElevation="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp15"
+        app:layout_constraintTop_toBottomOf="@id/txt_address_detail1"
+        android:layout_width="0dp"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:padding="@dimen/dp5"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:fontFamily="@font/palladiaroman"
+                android:textSize="@dimen/text_13sp"
+                android:gravity="center"
+                android:textColor="@color/text_day_flight"
+                android:text="Security wating time"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:fontFamily="@font/palladiaroman"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dp5"
+                android:textColor="@color/text_flight"
+                android:textSize="@dimen/text_18sp"
+                android:text="-"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_marginRight="@dimen/dp10"
+        app:layout_constraintLeft_toRightOf="@id/cardview_security_time"
+        android:id="@+id/cardview_boarding"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="@dimen/dp5"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/dp5"
+        app:cardElevation="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp15"
+        app:layout_constraintTop_toBottomOf="@id/txt_address_detail1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:padding="@dimen/dp5"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <TextView
+                android:fontFamily="@font/palladiaroman"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textSize="@dimen/text_13sp"
+                android:textColor="@color/text_day_flight"
+                android:text="BOARING"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txt_gate_boaring"
+                android:fontFamily="@font/palladiaroman"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp5"
+                android:textColor="@color/text_flight"
+                android:textSize="@dimen/text_18sp"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:text="-"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt_airline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp5"
+        android:text="---"
+        android:textColor="@color/text_flight"
+        android:textSize="@dimen/text_15sp"
+        android:fontFamily="@font/palladiaroman"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardview_checkin" />
+    <Button
+
+        android:textColor="@color/text_flight"
+        android:id="@+id/bnt_track_light"
+        android:textSize="@dimen/text_15sp"
+        android:layout_marginTop="@dimen/dp10"
+        android:paddingLeft="@dimen/dp50"
+        android:paddingRight="@dimen/dp50"
+        android:background="@drawable/spr_button_track"
+        android:textAllCaps="false"
+        android:text="Track this flight"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_airline"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
+    <ImageView
+        app:layout_constraintTop_toBottomOf="@+id/bnt_track_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/icon_may_bay"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+</android.support.constraint.ConstraintLayout>

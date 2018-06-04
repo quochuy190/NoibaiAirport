@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ic_maybay"
+        title="@string/tab_flight" />
+    <tab
+        id="@+id/tab_flight"
+        icon="@drawable/ic_dichvu"
+        title="@string/tab_service" />
+    <tab
+
+        id="@+id/tab_booking"
+        icon="@drawable/ic_shops"
+        title="@string/tab_shopdine" />
+    <tab
+        id="@+id/tab_service"
+        icon="@drawable/ic_tuongtac"
+        title="@string/tab_tuongtac" />
+    <tab
+        id="@+id/tab_shopdine"
+        icon="@drawable/ic_more"
+        title="@string/tab_menu" />
+</tabs>
