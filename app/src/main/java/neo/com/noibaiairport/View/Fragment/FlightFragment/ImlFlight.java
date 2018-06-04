@@ -20,6 +20,7 @@ public interface ImlFlight {
         void get_list_flight(String sUserId, String sFlightNo, String sLocation, String sDA_type,
                              String sDatetime, String sAirline, String sLoad, String sPage, String sIndex);
         void get_detail_flight(String sUserId, String sDAtype, String sDatetime, String sFlightNo);
+        void set_follow_flight(String sUserId, String sDAtype, String sDatetime, String sStatus, String sFlightNo);
     }
     interface View{
         void show_list_filghtinfo(List<FlightInfo> lisFlight);

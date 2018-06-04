@@ -105,4 +105,29 @@ public class PresenterFlight implements ImlFlight.Presenter {
             }
         }, mMap);
     }
+
+    @Override
+    public void set_follow_flight(String sUserId, String sDAtype, String sDatetime, String sStatus, String sFlightNo) {
+        Map<String, String> mMap = new LinkedHashMap<>();
+        mMap.put("Service", "setfollowflight");
+        mMap.put("Provider", "default");
+        mMap.put("ParamSize", "5");
+        mMap.put("P1", sUserId);
+        mMap.put("P2", sDAtype);
+        mMap.put("P3", sDatetime);
+        mMap.put("P4", sStatus);
+        mMap.put("P5", sFlightNo);
+
+        mApiService.getApiService(new CallbackData<String>() {
+            @Override
+            public void onGetDataSuccess(String objT) {
+
+            }
+
+            @Override
+            public void onGetDataErrorFault(Exception e) {
+
+            }
+        }, mMap);
+    }
 }

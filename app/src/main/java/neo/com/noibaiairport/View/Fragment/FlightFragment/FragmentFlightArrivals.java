@@ -68,10 +68,8 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
         ButterKnife.bind(this, view);
         mPresenter = new PresenterFlight(this);
         initPulltoRefresh();
-
         init();
         initData();
-
         return view;
     }
 
@@ -86,7 +84,6 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
         mLisFlight = new ArrayList<>();
         adapterCategory = new AdapterFlightInfo(mLisFlight, getContext());
         mLayoutManager = new GridLayoutManager(getContext(), 1);
-        //recycle_category.setNestedScrollingEnabled(false);
         recycle_flight_info.setHasFixedSize(true);
         recycle_flight_info.setLayoutManager(mLayoutManager);
         recycle_flight_info.setItemAnimator(new DefaultItemAnimator());
