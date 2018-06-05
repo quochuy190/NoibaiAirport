@@ -16,4 +16,5 @@ public class Constants {
     public static final String KEY_SENT_SHOPS = "KEY_SENT_SHOPS";
     public static final String KEY_SENT_FLIGHT = "KEY_SENT_FLIGHT";
     public static final String KEY_SENT_FLIGHT_TYPE = "KEY_SENT_FLIGHT_TYPE";
+
 }

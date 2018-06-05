@@ -2,6 +2,8 @@ package neo.com.noibaiairport.untils;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +14,7 @@ import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    protected AlertDialog alertDialog;
+    protected AlertDialog.Builder builder;
     boolean layout = true;
 
     @Override
@@ -40,9 +42,35 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    public void showDialogYesNo(String title, String content){
+    public void showAlertDialog(String title, String content) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Light_Dialog_Alert);
+        } else
+            builder = new AlertDialog.Builder(this);
+      /*  if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+            builder = new AlertDialog.Builder(BaseActivity.this);
+        } else {
+            builder = new AlertDialog.Builder(BaseActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+        }*/
+        builder.setTitle(title)
+                .setCancelable(false)
+                .setMessage(content)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+
+                    }
+                })
+                /*.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })*/
+                .show();
+
 
     }
+
     protected ProgressDialog dialog;
     private Handler StopDialogLoadingHandler = new Handler();
 

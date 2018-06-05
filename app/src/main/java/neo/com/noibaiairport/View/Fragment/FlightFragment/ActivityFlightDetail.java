@@ -88,7 +88,7 @@ public class ActivityFlightDetail extends BaseActivity implements ImlFlight.View
     private void initData() {
         FlightInfo objFlight = (FlightInfo) getIntent().getSerializableExtra(Constants.KEY_SENT_FLIGHT);
         String sType = getIntent().getStringExtra(KEY_SENT_FLIGHT_TYPE);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String currentDateandTime = sdf.format(mCalendar);
         sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
         if (objFlight != null && objFlight.getmFlight_Number() != null)
@@ -125,6 +125,7 @@ public class ActivityFlightDetail extends BaseActivity implements ImlFlight.View
     @Override
     public void show_detail_flight(List<FlightInfo> lisFlight) {
         if (lisFlight.size() > 0)
+           // showAlertDialog("Thông báo", lisFlight.size()+"");
             mObjFlight = lisFlight.get(0);
         updateDataFlight();
     }

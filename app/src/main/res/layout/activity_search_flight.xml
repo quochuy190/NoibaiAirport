@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/dp10"
+    android:layout_height="match_parent">
+
+
+        <EditText
+            android:layout_marginTop="@dimen/dp35"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/text_flight"
+            android:hint="@string/edt_filght_id"
+            android:textCursorDrawable="@color/text_flight"
+            android:textSize="@dimen/text_14sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp10"
+            android:backgroundTint="@color/text_flight"
+            android:hint="@string/edt_filght_address"
+            android:textCursorDrawable="@color/text_flight"
+            android:textSize="@dimen/text_14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dp15"
+                android:backgroundTint="@color/text_flight"
+                android:hint="@string/edt_filght_date"
+                android:textCursorDrawable="@color/text_flight"
+                android:textSize="@dimen/text_14sp" />
+
+            <ImageView
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:layout_alignParentRight="true"
+
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_date"
+                android:tint="@color/text_flight" />
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp10"
+            android:backgroundTint="@color/text_flight"
+            android:hint="@string/edt_filght_airline"
+            android:textCursorDrawable="@color/text_flight"
+            android:textSize="@dimen/text_14sp" />
+
+        <Button
+            android:layout_width="@dimen/dp150"
+            android:layout_height="@dimen/dp40"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@drawable/spr_button"
+            android:text="@string/btn_search"
+            android:textColor="@color/text_flight" />
+
+        <LinearLayout
+            android:id="@+id/linear_visiblity"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp30"
+            android:gravity="center_horizontal">
+
+            <View
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp3"
+                android:layout_gravity="center_vertical"
+                android:background="@color/text_flight" />
+        </LinearLayout>
+
+</LinearLayout>

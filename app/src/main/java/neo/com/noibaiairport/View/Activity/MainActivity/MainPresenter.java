@@ -85,6 +85,7 @@ public class MainPresenter implements MainInterface.Presenter {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
+
                     Log.i(TAG, "onGetObjectDataSuccess: "+e);
                 }
             }

@@ -61,8 +61,10 @@ public class PresenterFlight implements ImlFlight.Presenter {
                 Log.i(TAG, "onGetDataSuccess: " + objT);
                 try {
                     List<FlightInfo> mLisFlight = FlightInfo.getList(objT);
-                    if (mLisFlight.size()>0){
+                    if (mLisFlight.size()>0&&mLisFlight.get(0).getsERROR().equals("0000")){
                         view.show_list_filghtinfo(mLisFlight);
+                    }else {
+                        view.show_list_filghtinfo(null);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -95,8 +97,10 @@ public class PresenterFlight implements ImlFlight.Presenter {
                 Log.i(TAG, "onGetDataSuccess: " + objT);
                 try {
                     List<FlightInfo> mLisFlight = FlightInfo.getList(objT);
-                    if (mLisFlight.size()>0){
+                    if (mLisFlight.size()>0&&mLisFlight.get(0).getsERROR().equals("0000")){
                         view.show_detail_flight(mLisFlight);
+                    }else {
+
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -106,6 +110,14 @@ public class PresenterFlight implements ImlFlight.Presenter {
         }, mMap);
     }
 
+    /**
+     *
+     * @param sUserId
+     * @param sDAtype
+     * @param sDatetime
+     * @param sStatus
+     * @param sFlightNo
+     */
     @Override
     public void set_follow_flight(String sUserId, String sDAtype, String sDatetime, String sStatus, String sFlightNo) {
         Map<String, String> mMap = new LinkedHashMap<>();

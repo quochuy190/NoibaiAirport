@@ -14,7 +14,6 @@ import neo.com.noibaiairport.untils.LanguageUtils;
 
 
 public class SplashScreen extends BaseActivity {
-    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private static final String TAG = "SplashScreen";
 
 
@@ -32,9 +31,7 @@ public class SplashScreen extends BaseActivity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        // setContentView(R.layout.activity_splash_screen);
         LanguageUtils.loadLocale();
-
         mainIntent.setClass(SplashScreen.this, MainActivity.class);
         img_splash = (ImageView) findViewById(R.id.img_splash);
         Glide.with(this).load(R.drawable.img_plash).into(img_splash);

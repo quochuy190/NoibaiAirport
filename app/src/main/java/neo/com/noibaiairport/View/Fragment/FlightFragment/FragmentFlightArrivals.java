@@ -55,6 +55,8 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
     private int iPage = 1;
     private int iIndex = 20;
 
+    boolean isLoading;
+    int pastVisiblesItems, visibleItemCount, totalItemCount;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +91,7 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
         recycle_flight_info.setItemAnimator(new DefaultItemAnimator());
         recycle_flight_info.setAdapter(adapterCategory);
         adapterCategory.notifyDataSetChanged();
+
         adapterCategory.setOnIListener(new setOnItemClickListener() {
             @Override
             public void OnItemClickListener(int position) {
@@ -103,10 +106,38 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
 
             }
         });
+
+        recycle_flight_info.setOnScrollListener(new RecyclerView.OnScrollListener() {
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy > 0) {
+                    GridLayoutManager layoutmanager = (GridLayoutManager) recyclerView.getLayoutManager();
+                    visibleItemCount = layoutmanager.getChildCount();
+                    totalItemCount = layoutmanager.getItemCount();
+                    pastVisiblesItems = layoutmanager.findFirstVisibleItemPosition();
+                    if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
+                        if (!isLoading) {
+                            isLoading = true;
+                            mLisFlight.add(null);
+                            adapterCategory.notifyDataSetChanged();
+                            iPage++;
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    initData();
+                                }
+                            }, 1000);
+                        }
+                    }
+                }
+            }
+        });
     }
 
     private void initData() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String currentDateandTime = sdf.format(mCalendar);
         sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
         mPresenter.get_list_flight(sUserId, "", "", "A", currentDateandTime, "",
@@ -116,9 +147,25 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
 
     @Override
     public void show_list_filghtinfo(List<FlightInfo> lisFlight) {
-        if (lisFlight.size() > 0) {
-            mLisFlight.addAll(lisFlight);
-            adapterCategory.notifyDataSetChanged();
+        if (lisFlight!=null&&lisFlight.size()>0){
+            isLoading=false;
+            if (iPage>1){
+                mLisFlight.remove(mLisFlight.size()-1);
+                adapterCategory.notifyDataSetChanged();
+                mLisFlight.addAll(lisFlight);
+                adapterCategory.notifyDataSetChanged();
+            }else {
+                mLisFlight.addAll(lisFlight);
+                adapterCategory.notifyDataSetChanged();
+            }
+
+        }else {
+            if (mLisFlight!=null&&mLisFlight.size()>0){
+                mLisFlight.remove(mLisFlight.size()-1);
+                adapterCategory.notifyDataSetChanged();
+            }else {
+                adapterCategory.notifyDataSetChanged();
+            }
         }
     }
 
