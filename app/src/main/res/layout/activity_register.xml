@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/app_bar_main"/>
+    <TextView
+
+        android:layout_marginTop="@dimen/dp50"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_15sp"
+        android:gravity="center"
+        android:text="@string/text_register"
+        android:padding="@dimen/dp10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edt_user_register"
+        android:hint="@string/hint_user_register"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@drawable/spr_edt_register"
+        android:padding="@dimen/dp15"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/edt_email_register"
+        android:hint="@string/hint_email_register"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@drawable/spr_edt_register"
+        android:padding="@dimen/dp15"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_cancel_register"
+            android:textColor="@color/white"
+            android:text="@string/btn_cancel"
+            android:textAllCaps="false"
+            android:layout_marginRight="@dimen/dp5"
+            android:background="@drawable/spr_register_cancel"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_comfirm_register"
+
+            android:textColor="@color/white"
+            android:text="@string/btn_comfirm"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/dp5"
+            android:background="@drawable/spr_register_confirm"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

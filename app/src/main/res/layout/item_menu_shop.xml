@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_contacts"
+    android:layout_width="match_parent"
+    android:background="@drawable/spr_item_language"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp5"
+    android:layout_marginTop="@dimen/dp1"
+    android:orientation="horizontal"
+    >
+
+
+    <!--  ListRow Left sied Thumbnail image -->
+    <ImageView
+        android:padding="@dimen/dp5"
+        android:id="@+id/img_flag"
+        android:layout_marginLeft="@dimen/dp5"
+        android:layout_centerVertical="true"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
+    <!-- Title Of Song-->
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@id/img_flag"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_centerVertical="true"
+            android:id="@+id/txt_name_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textColor="@color/text_flight"
+            android:textSize="@dimen/text_17sp"
+            android:typeface="sans" />
+        <TextView
+            android:layout_below="@id/txt_name_menu"
+            android:layout_toRightOf="@id/img_flag"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_centerVertical="true"
+            android:id="@+id/txt_price_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textColor="@color/text_flight"
+            android:textSize="@dimen/text_16sp"
+            android:typeface="sans" />
+        <TextView
+
+            android:layout_toRightOf="@id/img_flag"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_centerVertical="true"
+            android:id="@+id/txt_unit_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textColor="@color/text_flight"
+            android:textSize="@dimen/text_16sp"
+            android:typeface="sans" />
+    </LinearLayout>
+
+    <!-- Artist Name -->
+
+
+    <!-- Rightend Arrow -->
+
+</RelativeLayout>

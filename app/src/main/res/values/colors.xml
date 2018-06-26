@@ -5,16 +5,19 @@
     <color name="colorAccent">#FF4081</color>
     <color name="red">#f40616</color>
     <color name="blue_vietnamairline">#006886</color>
-    <color name="color_lotus">#8bc541</color>
+    <color name="color_lotus">#cacfce</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="text_flight">#283e6b</color>
     <color name="text_day_flight">#1582c3</color>
-    <color name="gray">#dbdcde</color>
+    <color name="gray">#eeeff1</color>
     <color name="app_bar">#1582c3</color>
-    <color name="bottom_bar">#dee0e1</color>
-    <color name="background_itemservice">#bf393f41</color>
+    <color name="bottom_bar">#B3B4B4</color>
+    <color name="background_itemservice">#6b262626</color>
     <color name="view">#c7ccce</color>
-
-    <color name="vien">#ea882d</color>
+    <color name="border">#777a7b</color>
+    <color name="vien">#ca711e</color>
+    <color name="hint_white">#6cf1efef</color>
+    <color name="start">#0bdedbdb</color>
+    <color name="end">#fb4a4a4a</color>
 </resources>

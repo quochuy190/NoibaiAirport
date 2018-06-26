@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/app_bar_main" />
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/img_avata_addfeedback"
+            android:layout_width="@dimen/dp50"
+            android:layout_height="@dimen/dp50"
+            android:layout_marginLeft="@dimen/dp10"
+
+            android:src="@drawable/ic_avata_svg" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/img_avata_addfeedback"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txt_name_addfeddback"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp5"
+                android:gravity="center_vertical"
+                android:text="name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15sp" />
+
+            <TextView
+                android:id="@+id/txt_email_addfeddback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_name_addfeddback"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_marginTop="@dimen/dp2"
+                android:layout_toRightOf="@+id/img_avata_addfeedback"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/edt_content_addfeedback"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp15"
+
+        android:background="@drawable/spr_edittext_feedback"
+        android:gravity="top"
+        android:padding="@dimen/dp10"
+         />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp5"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:orientation="vertical"
+        android:padding="@dimen/dp5"
+       >
+
+        <Switch
+            android:id="@+id/switch_public"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp10"
+            android:checked="true"
+            android:switchPadding="@dimen/dp10"
+            android:text="@string/switch_addfeedback"
+            android:textColor="@color/text_flight"
+            android:textSize="@dimen/text_15sp" />
+
+        <Button
+            android:id="@+id/btn_add_feedback"
+            android:layout_width="@dimen/dp200"
+            android:layout_height="@dimen/dp40"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/spr_register_confirm"
+            android:text="@string/btn_comfirm"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+
+</LinearLayout>

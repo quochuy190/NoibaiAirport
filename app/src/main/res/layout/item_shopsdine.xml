@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:layout_marginRight="@dimen/dp5"
-    android:layout_marginBottom="@dimen/dp5"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="@dimen/width_item_objservice"
-    android:layout_height="@dimen/height_item_objservice"   >
-    <ImageView
-        android:id="@+id/img_item_shops"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:src="@drawable/image"
-        android:layout_width="@dimen/width_item_objservice"
-        android:layout_height="@dimen/height_item_objservice"  />
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp5"
+    app:cardCornerRadius="@dimen/dp3"
+    android:layout_marginRight="@dimen/dp5">
+
     <RelativeLayout
-        android:padding="@dimen/dp5"
-        android:background="@color/background_itemservice"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"       >
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/img_item_shops"
+            android:layout_width="@dimen/width_item_objservice"
+            android:layout_height="@dimen/height_item_objservice"
+            android:adjustViewBounds="true"
+            android:src="@drawable/image" />
         <TextView
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:text="CÂY NƯỚC MIỄN PHÍ"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:padding="@dimen/dp5"
+            android:maxLines="1"
+            android:layout_below="@id/img_item_shops"
             android:id="@+id/txt_item_shops_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_15sp" />
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:padding="@dimen/dp5"
+            android:textColor="@color/text_flight"
+            android:textSize="@dimen/text_16sp" />
     </RelativeLayout>
 
 
-
-
-</RelativeLayout>
+</android.support.v7.widget.CardView>

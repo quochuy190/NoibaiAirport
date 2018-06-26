@@ -1,46 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp35"
         android:background="@color/white"
-        android:src="@drawable/icon_logo"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp50" />
+        android:src="@drawable/icon_logo" />
+
     <ImageView
-        android:scaleType="centerCrop"
-        android:src="@drawable/icon_may_bay"
         android:layout_width="match_parent"
-        android:layout_height="120dp" />
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_may_bay" />
+
     <android.support.v4.widget.NestedScrollView
-        android:padding="@dimen/dp10"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/dp2">
 
             <LinearLayout
+                android:id="@+id/linear_hotline"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp70"
-                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp2"
+                android:background="@drawable/spr_item_language"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/dp100"
-                    android:layout_height="@dimen/dp70"
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
                     android:padding="@dimen/dp15"
-                    android:src="@drawable/img_checkin" />
+                    android:src="@drawable/ic_call" />
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/dp15"
                     android:layout_marginTop="@dimen/dp15"
+                    android:background="@color/text_flight" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp20"
+                        android:text="@string/txt_hotline"
+                        android:textColor="@color/text_flight"
+                        android:textSize="@dimen/text_17sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp20"
+                        android:text="@string/hotline"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_17sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_loyalty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp2"
+                android:background="@drawable/spr_item_language"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
+                    android:padding="@dimen/dp15"
+                   />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
                     android:background="@color/text_flight" />
 
                 <TextView
@@ -53,24 +111,26 @@
                     android:textSize="@dimen/text_17sp"
                     android:textStyle="bold" />
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="@dimen/dp10"
+                android:id="@+id/ll_map"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp70"
-                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp2"
+                android:background="@drawable/spr_item_language"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/dp100"
-                    android:layout_height="@dimen/dp70"
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
                     android:padding="@dimen/dp15"
                     android:src="@drawable/ic_map" />
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/dp15"
-                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
                     android:background="@color/text_flight" />
 
                 <TextView
@@ -80,22 +140,82 @@
                     android:paddingLeft="@dimen/dp20"
                     android:text="@string/txt_map"
                     android:textColor="@color/text_flight"
-                    android:textSize="@dimen/text_17sp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/text_17sp" />
             </LinearLayout>
+
             <LinearLayout
-                android:id="@+id/linear_feedback"
-                android:layout_marginTop="@dimen/dp10"
+                android:id="@+id/ll_baggage_lost"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp70"
-                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp2"
+                android:background="@drawable/spr_item_language"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/dp100"
-                    android:layout_height="@dimen/dp70"
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
                     android:padding="@dimen/dp15"
-                    android:src="@drawable/ic_call" />
+                    android:src="@drawable/menu_baggage_lost" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@color/text_flight" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp20"
+                    android:text="@string/txt_baggage_lost"
+                    android:textColor="@color/text_flight"
+                    android:textSize="@dimen/text_17sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_tax_refund"
+                android:layout_marginTop="@dimen/dp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spr_item_language"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
+                    android:padding="@dimen/dp15"
+                    android:src="@drawable/menu_tax_refund" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@color/text_flight" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp20"
+                    android:text="@string/txt_tax_refund"
+                    android:textColor="@color/text_flight"
+                    android:textSize="@dimen/text_17sp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp2"
+                android:background="@drawable/spr_item_language"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
+                    android:padding="@dimen/dp15"
+                    android:src="@drawable/menu_feedback" />
 
                 <View
                     android:layout_width="1dp"
@@ -111,27 +231,28 @@
                     android:paddingLeft="@dimen/dp20"
                     android:text="@string/txt_evaluate"
                     android:textColor="@color/text_flight"
-                    android:textSize="@dimen/text_17sp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/text_17sp" />
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="@dimen/dp10"
+                android:id="@+id/ll_about"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp70"
-                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp2"
+                android:background="@drawable/spr_item_language"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/dp100"
-                    android:layout_height="@dimen/dp70"
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
                     android:padding="@dimen/dp15"
-                    android:src="@drawable/img_checkin" />
+                    android:src="@drawable/about_us" />
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/dp15"
-                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
                     android:background="@color/text_flight" />
 
                 <TextView
@@ -141,22 +262,22 @@
                     android:paddingLeft="@dimen/dp20"
                     android:text="@string/txt_about"
                     android:textColor="@color/text_flight"
-                    android:textSize="@dimen/text_17sp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/text_17sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/linear_language"
-                android:layout_marginTop="@dimen/dp10"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp70"
-                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp2"
+                android:background="@drawable/spr_item_language"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/dp100"
-                    android:layout_height="@dimen/dp70"
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
                     android:padding="@dimen/dp15"
-                    android:src="@drawable/img_checkin" />
+                    android:src="@drawable/menu_language" />
 
                 <View
                     android:layout_width="1dp"
@@ -172,17 +293,11 @@
                     android:paddingLeft="@dimen/dp20"
                     android:text="@string/txt_language"
                     android:textColor="@color/text_flight"
-                    android:textSize="@dimen/text_17sp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/text_17sp" />
             </LinearLayout>
-
-
-
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
-
-
 
 
 </LinearLayout>

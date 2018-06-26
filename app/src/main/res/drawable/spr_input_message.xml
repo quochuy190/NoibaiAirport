@@ -4,14 +4,14 @@
 
     <!-- View background color -->
     <solid
-        android:color="@color/white" >
+        android:color="@color/gray" >
     </solid>
 
     <!-- The radius makes the corners rounded -->
     <corners
-        android:radius="10dp">
+        android:radius="20dp">
     </corners>
     <stroke
         android:width="@dimen/dp1"
-        android:color="@color/blue_vietnamairline"/>
+        android:color="@color/border"/>
 </shape>

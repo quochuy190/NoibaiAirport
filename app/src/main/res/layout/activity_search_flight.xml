@@ -3,21 +3,54 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:padding="@dimen/dp10"
     android:layout_height="match_parent">
+    <include layout="@layout/app_bar_main">
+
+    </include>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp35"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txt_search_departure"
+            android:textSize="@dimen/text_17sp"
+            android:textColor="@color/red"
+            android:gravity="right"
+            android:text="@string/departures"
+            android:padding="@dimen/dp10"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/text_flight"
+            android:id="@+id/txt_search_arrivals"
+            android:textSize="@dimen/text_17sp"
+            android:gravity="left"
+            android:text="@string/arrivals"
+            android:padding="@dimen/dp10"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 
         <EditText
-            android:layout_marginTop="@dimen/dp35"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp5"
+            android:id="@+id/edt_search_flightnumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:backgroundTint="@color/text_flight"
             android:hint="@string/edt_filght_id"
             android:textCursorDrawable="@color/text_flight"
-            android:textSize="@dimen/text_14sp" />
+            android:textSize="@dimen/text_15sp" />
 
         <EditText
+            android:focusable="false"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp5"
+            android:id="@+id/edt_search_airport"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -25,34 +58,41 @@
             android:backgroundTint="@color/text_flight"
             android:hint="@string/edt_filght_address"
             android:textCursorDrawable="@color/text_flight"
-            android:textSize="@dimen/text_14sp" />
+            android:textSize="@dimen/text_15sp" />
 
         <RelativeLayout
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp5"
+            android:id="@+id/relative_search_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp10">
 
             <EditText
+                android:focusable="false"
+                android:id="@+id/edt_search_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="@dimen/dp15"
                 android:backgroundTint="@color/text_flight"
                 android:hint="@string/edt_filght_date"
                 android:textCursorDrawable="@color/text_flight"
-                android:textSize="@dimen/text_14sp" />
+                android:textSize="@dimen/text_15sp" />
 
             <ImageView
                 android:layout_width="@dimen/dp30"
                 android:layout_height="@dimen/dp30"
                 android:layout_alignParentRight="true"
-
                 android:layout_centerVertical="true"
                 android:src="@drawable/ic_date"
                 android:tint="@color/text_flight" />
         </RelativeLayout>
 
         <EditText
+            android:focusable="false"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp5"
+            android:id="@+id/edt_search_airline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -60,9 +100,10 @@
             android:backgroundTint="@color/text_flight"
             android:hint="@string/edt_filght_airline"
             android:textCursorDrawable="@color/text_flight"
-            android:textSize="@dimen/text_14sp" />
+            android:textSize="@dimen/text_15sp" />
 
         <Button
+            android:id="@+id/btn_search"
             android:layout_width="@dimen/dp150"
             android:layout_height="@dimen/dp40"
             android:layout_gravity="center_horizontal"
@@ -71,17 +112,6 @@
             android:text="@string/btn_search"
             android:textColor="@color/text_flight" />
 
-        <LinearLayout
-            android:id="@+id/linear_visiblity"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp30"
-            android:gravity="center_horizontal">
 
-            <View
-                android:layout_width="@dimen/dp150"
-                android:layout_height="@dimen/dp3"
-                android:layout_gravity="center_vertical"
-                android:background="@color/text_flight" />
-        </LinearLayout>
 
 </LinearLayout>

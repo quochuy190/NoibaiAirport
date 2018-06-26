@@ -19,18 +19,22 @@
         android:id="@+id/frame_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp2"
         android:layout_above="@+id/bottomBar" />
-
+    <View
+        android:layout_above="@id/bottomBar"
+        android:background="@drawable/below_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp2"/>
     <com.roughike.bottombar.BottomBar
-
         android:background="@color/bottom_bar"
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp55"
         android:layout_alignParentBottom="true"
-        app:bb_activeTabColor="@color/color_lotus"
-        app:bb_badgeBackgroundColor="@color/color_lotus"
-        app:bb_inActiveTabColor="@color/text_flight"
+        app:bb_activeTabColor="#0681C1"
+        app:bb_badgeBackgroundColor="#0681C1"
+        app:bb_inActiveTabColor="#DEE0E2"
         app:bb_tabXmlResource="@xml/bottombar_tabs"
         app:bb_titleTextAppearance="@style/MyTextAppearance" />
 

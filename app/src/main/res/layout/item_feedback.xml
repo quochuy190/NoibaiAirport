@@ -1,23 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/dp5"
+    android:layout_marginTop="@dimen/dp1"
+    android:background="@color/white"
     android:orientation="vertical">
-    <TextView
-        android:fontFamily="@font/palladiaroman"
-        android:textStyle="italic"
-        android:textSize="@dimen/text_13sp"
-        android:padding="@dimen/dp5"
-        android:id="@+id/txt_name_sent_fb"
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avata_feedback"
+        android:layout_width="@dimen/dp40"
+        android:layout_height="@dimen/dp40"
+        android:layout_marginLeft="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp5"
+        android:src="@drawable/avata"
+        />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_toRightOf="@id/img_avata_feedback"
+        android:layout_marginLeft="@dimen/dp5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:singleLine="true"
+            android:textStyle="italic"
+            android:id="@+id/txt_name_sent_fb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/app_bar"
+            android:textSize="@dimen/text_14sp" />
+        <TextView
+
+            android:singleLine="true"
+            android:textStyle="italic"
+            android:id="@+id/txt_time_sent_fb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/app_bar"
+            android:textSize="@dimen/text_13sp" />
+
+    </LinearLayout>
+
+
+
     <TextView
-        android:textSize="@dimen/text_15sp"
-        android:fontFamily="@font/palladiaroman"
-        android:padding="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp5"
         android:id="@+id/txt_question_fb"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_avata_feedback"
+        android:padding="@dimen/dp5"
+        android:singleLine="true"
+        android:textColor="@color/text_flight"
+        android:textSize="@dimen/text_15sp" />
 
-</LinearLayout>
+</RelativeLayout>

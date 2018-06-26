@@ -4,89 +4,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/gray"
-    android:padding="@dimen/dp10">
+   >
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
+        <View
+            android:background="@color/text_flight"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp100"
-            android:background="@drawable/spr_edittext_search"
+            android:layout_height="@dimen/dp2"/>
+
+        <LinearLayout
+            android:id="@+id/ll_checkin"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_marginLeft="@dimen/dp5"
+            android:padding="@dimen/dp5"
+            android:background="@drawable/spr_border_flight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="@dimen/dp100"
-                android:layout_height="@dimen/dp100"
-                android:padding="@dimen/dp10"
-                android:src="@drawable/ic_checkin"
-                />
+                android:layout_gravity="center_vertical"
+                android:layout_width="@dimen/dp70"
+                android:layout_height="@dimen/dp70"
+                android:padding="@dimen/dp5"
+                android:src="@drawable/ic_checkin"/>
 
             <View
                 android:background="@color/text_flight"
-                android:layout_marginTop="@dimen/dp15"
-                android:layout_marginBottom="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"/>
 
             <TextView
+                android:textStyle="bold"
+
                 android:textColor="@color/text_flight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:paddingLeft="@dimen/dp20"
+                android:paddingLeft="@dimen/dp15"
                 android:text="@string/txt_flight_checkin"
                 android:textSize="@dimen/text_17sp"
-                android:textStyle="bold" />
+                />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_booking"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_marginLeft="@dimen/dp5"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp100"
-            android:layout_marginTop="@dimen/dp10"
-            android:background="@drawable/spr_edittext_search"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:padding="@dimen/dp5"
+            android:background="@drawable/spr_border_flight"
             android:orientation="horizontal">
 
             <ImageView
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:layout_width="@dimen/dp100"
-                android:layout_height="@dimen/dp100"
-                android:padding="@dimen/dp10"
-                android:src="@drawable/img_booking"
-                />
+
+                android:layout_width="@dimen/dp70"
+                android:layout_height="@dimen/dp70"
+                android:padding="@dimen/dp5"
+                android:src="@drawable/img_booking"/>
 
             <View
                 android:background="@color/text_flight"
-                android:layout_marginTop="@dimen/dp15"
-                android:layout_marginBottom="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"/>
 
             <TextView
+                android:textStyle="bold"
+
                 android:textColor="@color/text_flight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:paddingLeft="@dimen/dp20"
+                android:paddingLeft="@dimen/dp15"
                 android:text="@string/txt_flight_booking"
-                android:textSize="@dimen/text_17sp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/text_17sp" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_instuction"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_marginLeft="@dimen/dp5"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp100"
-            android:layout_marginTop="@dimen/dp10"
-            android:background="@drawable/spr_edittext_search"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:padding="@dimen/dp5"
+            android:background="@drawable/spr_border_flight"
             android:orientation="horizontal">
 
             <ImageView
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:layout_width="@dimen/dp100"
-                android:layout_height="@dimen/dp100"
-                android:padding="@dimen/dp10"
+                android:layout_width="@dimen/dp70"
+                android:layout_height="@dimen/dp70"
+                android:padding="@dimen/dp5"
                 android:src="@drawable/ic_intrustion"
                 />
 
@@ -98,27 +116,32 @@
                 android:layout_height="match_parent"/>
 
             <TextView
+
                 android:textColor="@color/text_flight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:paddingLeft="@dimen/dp20"
+                android:paddingLeft="@dimen/dp15"
                 android:text="@string/txt_flight_instruction"
                 android:textSize="@dimen/text_17sp"
                 android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_ariline_info"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_marginLeft="@dimen/dp5"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp100"
-            android:layout_marginTop="@dimen/dp10"
-            android:background="@drawable/spr_edittext_search"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:padding="@dimen/dp5"
+            android:background="@drawable/spr_border_flight"
             android:orientation="horizontal">
 
             <ImageView
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:layout_width="@dimen/dp100"
-                android:layout_height="@dimen/dp100"
+                android:layout_width="@dimen/dp70"
+                android:layout_height="@dimen/dp70"
                 android:padding="@dimen/dp10"
                 android:src="@drawable/ic_airline"
 
@@ -126,17 +149,18 @@
 
             <View
                 android:background="@color/text_flight"
-                android:layout_marginTop="@dimen/dp15"
-                android:layout_marginBottom="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"/>
 
             <TextView
+
                 android:textColor="@color/text_flight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:paddingLeft="@dimen/dp20"
+                android:paddingLeft="@dimen/dp15"
                 android:text="@string/txt_airlines"
                 android:textSize="@dimen/text_17sp"
                 android:textStyle="bold" />

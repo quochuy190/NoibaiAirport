@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
-        app:tabTextColor="@color/text_flight"
-        app:popupTheme="@style/PopupOverlay"
-        app:tabTextAppearance="@style/text_tab_thongke"
-        app:tabSelectedTextColor="@color/color_lotus"
-        app:tabIndicatorColor="@color/color_lotus"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp45">
+        android:layout_height="@dimen/dp45"
+        android:background="@color/white"
+        app:popupTheme="@style/PopupOverlay"
+        app:tabIndicatorColor="@color/text_flight"
+        app:tabSelectedTextColor="@color/text_flight"
+        app:tabTextAppearance="@style/text_tab_thongke"
+        app:tabTextColor="@color/text_flight">
 
     </android.support.design.widget.TabLayout>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager_flight_home"
-        android:layout_below="@id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_layout">
     </android.support.v4.view.ViewPager>
 
 </RelativeLayout>

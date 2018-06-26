@@ -17,6 +17,7 @@
     <dimen name="dp40">40dp</dimen>
     <dimen name="dp45">45dp</dimen>
     <dimen name="dp50">50dp</dimen>
+    <dimen name="dp60">60dp</dimen>
     <dimen name="dp70">70dp</dimen>
     <dimen name="dp100">100dp</dimen>
     <dimen name="dp120">120dp</dimen>
@@ -41,4 +42,7 @@
     <dimen name="text_30sp">30sp</dimen>
     <dimen name="width_item_objservice">180dp</dimen>
     <dimen name="height_item_objservice">130dp</dimen>
+    <dimen name="text_time_flight">25dp</dimen>
+    <dimen name="img_avata_airline_flight">60dp</dimen>
+    <dimen name="margin_flight">5dp</dimen>
 </resources>

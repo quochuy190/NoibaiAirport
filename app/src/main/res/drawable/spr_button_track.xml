@@ -4,7 +4,7 @@
 
     <!-- View background color -->
     <solid
-        android:color="@color/white" >
+        android:color="@color/app_bar" >
     </solid>
     <stroke android:width="@dimen/dp1"
         android:color="@color/app_bar"/>

@@ -8,16 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:353941411882:android:5bfbc6e338fb4ee1",
+        "mobilesdk_app_id": "1:353941411882:android:aa0f832129222304",
         "android_client_info": {
-          "package_name": "neo.com.noibaiairport"
+          "package_name": "neo.com.noibai_airport"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "353941411882-cka90cp46odbo69vepljl0ag1f2re3dv.apps.googleusercontent.com",
-          "client_type": 3
-        },
         {
           "client_id": "353941411882-cka90cp46odbo69vepljl0ag1f2re3dv.apps.googleusercontent.com",
           "client_type": 3

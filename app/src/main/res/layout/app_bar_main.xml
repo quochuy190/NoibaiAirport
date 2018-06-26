@@ -8,29 +8,47 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <android.support.v7.widget.Toolbar
+            app:collapseIcon="@color/white"
             app:titleTextColor="@color/white"
             app:theme="@style/ToolbarStyle"
             android:id="@+id/toolbar_main"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp40"
+            android:layout_height="@dimen/dp45"
             android:layout_gravity="center_horizontal"
             android:baselineAligned="false">
-
         </android.support.v7.widget.Toolbar>
 
         <TextView
-            android:id="@+id/txt_title_main"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp40"
+            android:layout_marginRight="@dimen/dp40"
             android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:id="@+id/txt_title_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Title"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/text_18sp"
             android:textStyle="bold" />
+        <EditText
+            android:singleLine="true"
+            android:backgroundTint="@color/hint_white"
+            android:textColorHint="@color/hint_white"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/dp40"
+            android:layout_marginRight="@dimen/dp40"
+            android:id="@+id/edt_search_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:hint="@string/hint_search"
+            android:inputType="text"
 
+            android:textSize="@dimen/text_15sp" />
         <ImageView
             android:tint="@color/white"
             android:id="@+id/img_back"
@@ -50,6 +68,7 @@
             android:src="@drawable/ic_search"
             android:visibility="gone" />
         <ImageView
+            android:visibility="gone"
             android:padding="@dimen/dp3"
             android:id="@+id/img_chatbox"
             android:layout_width="@dimen/dp40"

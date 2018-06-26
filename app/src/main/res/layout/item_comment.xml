@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:padding="@dimen/dp5"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/relative_comment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/img_avata_comment"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avata"
+            android:tint="@color/app_bar"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="1dp"
+            />
+
+        <TextView
+            android:layout_toRightOf="@id/img_avata_comment"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_UserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="TextView"
+            android:textColor="@color/text_flight"
+            android:textSize="@dimen/text_13sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_below="@id/txt_UserName"
+            android:layout_toRightOf="@id/img_avata_comment"
+            android:id="@+id/txt_time_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_avata_comment"
+            app:layout_constraintTop_toBottomOf="@+id/txt_UserName" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_content_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative_comment" />
+
+    <View
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_content_comment" />
+</android.support.constraint.ConstraintLayout>

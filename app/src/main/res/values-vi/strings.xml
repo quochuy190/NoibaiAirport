@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Sân bay Nội Bài</string>
+
+
+
+
+
+
+
+    <!--Eng-->
+    <string name="app_name">NoibaiAirport</string>
     <string name="tab_home">Trang chủ</string>
     <string name="tab_flight">Chuyến bay</string>
     <string name="tab_booking">Booking</string>
     <string name="tab_service">Dịch vụ</string>
     <string name="tab_shopdine">Cửa hàng</string>
     <string name="tab_tuongtac">Tương tác</string>
-    <string name="tab_menu">Menu</string>
+    <string name="tab_menu">Thêm</string>
     <!--Back notification-->
     <string name="back_notification">Bấm thêm lần nữa để thoát</string>
+    <!--ngôn ngữ-->
+
     <!--ngôn ngữ-->
     <string name="txt_language">Ngôn ngữ </string>
     <string name="txt_Eng">Tiếng Anh</string>
@@ -21,19 +31,141 @@
     <string name="dialog_message">Bạn có chắc chắn muốn thay đổi ngôn ngữ của ứng dụng!</string>
     <string name="btn_ok">Đồng ý</string>
     <string name="btn_cancel">Không</string>
+    <!--change language-->
+    <string name="change_language_title">Language</string>
+    <!--Eng-->
+    <!--flight-->
     <!--flight-->
     <string name="txt_flight_schedule">Lịch trình chuyến bay</string>
     <string name="txt_airlines">Thông tin các hãng hàng không</string>
     <string name="txt_flight_checkin">Check-in trực tuyến</string>
     <string name="txt_flight_booking">Mua vé máy bay trực tuyến</string>
     <string name="txt_flight_instruction">Hướng dẫn quy định bay</string>
-    <string name="txt_title_departures">Chuyến bay đi</string>
+    <string name="txt_title_departures">Chuyến bay đi </string>
     <string name="txt_title_arrivals">Chuyến bay đến</string>
     <string name="txt_title_other">Khác</string>
 
+
+
+    <string name="txt_title_follow">Theo dõi chuyến bay</string>
+    <string name="txt_filght_search">Tìm kiếm</string>
+    <string name="edt_filght_search">Chạm để tìm kiếm</string>
+    <string name="edt_filght_id">Số hiệu máy bay</string>
+    <string name="edt_filght_address">Chọn điểm đến</string>
+    <string name="edt_filght_date">Hôm nay</string>
+    <string name="edt_filght_airline">Chọn hãng bay</string>
+    <string name="btn_search">Tìm kiếm</string>
+    <!--untranslatable-->
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_vietnamese" translatable="false">Tiếng Việt</string>
+
+    <string-array name="language_names">
+        <item>@string/language_english</item>
+        <item>@string/language_vietnamese</item>
+    </string-array>
+
+    <string name="language_english_code" translatable="false">en</string>
+    <string name="language_vietnamese_code" translatable="false">vi</string>
+
+    <string-array name="language_codes">
+        <item>@string/language_english_code</item>
+        <item>@string/language_vietnamese_code</item>
+    </string-array>
+    <!--title fragment menu-->
     <!--title fragment menu-->
     <string name="txt_loyalty_program">Kết nối dài lâu</string>
     <string name="txt_evaluate">Đánh giá góp ý</string>
     <string name="txt_about">Thông tin</string>
     <string name="txt_map">Bản đồ sân bay</string>
+    <string name="txt_hotline">Hotline</string>
+    <string name="txt_baggage_lost">Hành lý thất lạc</string>
+    <string name="txt_tax_refund">Hoàn thuế VAT</string>
+    <!--shops and dine-->
+    <string name="txt_shops">Cửa hàng</string>
+    <string name="txt_dine">Nhà hàng</string>
+
+    <!--title-->
+    <string name="appbar_flightdetail">Chi tiết chuyến bay</string>
+
+    <string name="mesaage_error_search">Không có kết quả tìm kiếm</string>
+    <string name="title_search">Tìm kiếm chuyến bay</string>
+    <string name="title_checkin">Check-in Online</string>
+    <string name="title_feedback">Đánh giá góp ý</string>
+    <string name="departures"><u><b><i>Chuyến bay đi</i></b></u></string>
+    <string name="arrivals"><u><b><i>Chuyến bay đến</i></b></u></string>
+    <string name="hint_input_name_feedback">- Nhập vào UserName</string>
+    <string name="hint_input_email_feedback">- Nhập vào Email</string>
+    <string name="text_register">Vui lòng nhập thông tin của bạn để gửi và nhận phản hồi</string>
+    <string name="hint_user_register">Tên (*)</string>
+    <string name="hint_email_register">Email (*)</string>
+    <string name="btn_comfirm">Xác nhận</string>
+    <string name="switch_addfeedback">Công khai</string>
+    <string name="txt_title_answer"> ---------    Trả lời    ---------</string>
+    <string name="tab_thutucbay">Hướng dẫn hành khách</string>
+    <string name="tab_hanhly">Hành lý và giấy tờ cá nhân</string>
+    <!--shop-->
+    <string name="viewpage_shop_general">Thông tin</string>
+    <string name="viewpage_shop_menu">Thực đơn</string>
+    <!--error-->
+    <string name="error_network">Lỗi kết nối</string>
+    <string name="error">Lỗi</string>
+    <string name="error_network_message">Lỗi kết nối, vui lòng kiểm tra mạng và thử lại</string>
+    <!--service detail-->
+    <string name="terminal">Nhà ga: </string>
+    <string name="floor">Tầng: </string>
+    <string name="area">Khu vực: </string>
+    <string name="phone">Phone: </string>
+    <string name="price">Giá: </string>
+    <string name="description">Thông tin chi tiết: </string>
+
+    <string name="title_service_detail">Chi tiết dịch vụ</string>
+    <string name="time_table">Thời gian biểu </string>
+    <string name="title_activity_main_airline_detail">MainAirlineDetail</string>
+    <!--airline_detail-->
+    <string name="location">Vị trí: </string>
+    <string name="hotline_airline">Hotline: </string>
+    <string name="check_in">Check-in </string>
+    <string name="booking">Đặt vé</string>
+    <string name="list_destination">Danh sách điểm đến</string>
+    <string name="title_airline_detail">Chi tiết hãng bay</string>
+
+    <string name="title_search_airline">Danh sách hãng bay</string>
+    <string name="title_search_airport">Danh sách sân bay</string>
+    <string name="txt_comment">Bình luận</string>
+    <string name="btn_load_earlier">Chuyến bay sớm hơn</string>
+
+    <!--Search Flight-->
+    <string name="edt_search_airport_arrivals">Nơi xuất phát</string>
+    <string name="edt_search_airport_departures">Nơi đến</string>
+    <string name="edt_search_airline_departures">Hãng bay</string>
+    <string name="hint_search">Search</string>
+
+    <!--Flight Detail-->
+    <string name="estimate">Dự kiến</string>
+    <string name="destination">Điểm đến</string>
+    <string name="check_in_counte">Quầy checkin</string>
+    <string name="lobby">Sảnh đợi</string>
+    <string name="boarding">Boarding</string>
+    <string name="security">Security wating time</string>
+    <!--Product detail-->
+    <string name="suppliers">Nhà cung cấp:</string>
+    <!-- SCHEDULE_TIME-->
+    <string name="schedule_time">Thời gian biểu:</string>
+    <!--Flight follow-->
+    <string name="txt_flight_listfollow">Chuyến bay đang theo dõi</string>
+    <string name="txt_flight_departure">Chuyến bay đi</string>
+    <string name="txt_flight_arrivals">Chuyến bay đến</string>
+
+    <string name="feedback_content">Cảm ơn bạn đã liên lạc với chúng tôi, Chúng tôi sẽ cố gắng giúp đỡ bạn tốt nhất có thế.
+        \n \nSau khi nhận được ý kiến đóng góp của bạn, Chúng tôi sẽ trả lời bạn sớm nhất có thể
+        \n \nVui lòng cho chúng tôi biết nếu bạn có bất kỳ góp ý gì thêm.
+        \n \nTrân trọng cảm ơn!
+    </string>
+    <string name="hello">Xin chào</string>
+    <string name="title_register">Đăng ký</string>
+    <string name="title_add_feedback">Thêm đánh giá góp ý</string>
+    <string name="show_error_follow_flight">Theo dõi thành công chuyến bay này</string>
+    <string name="show_failed_follw_flight">Theo dõi chuyến bay không thành công</string>
+    <string name="btn_track_flight">Theo dõi chuyến bay này</string>
+    <string name="btn_unfollow_flight">Huỷ theo dõi chuyến bay</string>
 </resources>

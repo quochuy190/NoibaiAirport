@@ -2,76 +2,67 @@
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:clipToPadding="true">
 
     <LinearLayout
 
-        android:padding="2dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/dp5"
-        android:background="@drawable/spr_edittext_search"
+
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/txt_shop_des_location"
 
-            android:background="@drawable/spr_textview_white"
-            android:layout_marginBottom="1dp"
+            android:background="@color/gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp5"
+            android:padding="@dimen/dp10"
             android:text="Location: Termial 2 G3..."
-            android:textColor="@color/text_flight"
-            android:textSize="@dimen/text_14sp" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15sp" />
 
         <TextView
+            android:id="@+id/txt_shop_des_timetable"
+
             android:background="@color/white"
-            android:layout_marginBottom="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp5"
+            android:padding="@dimen/dp10"
             android:text="Time table: 07:00 - 23:00"
-            android:textColor="@color/text_flight"
-            android:textSize="@dimen/text_14sp" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15sp" />
 
         <TextView
-            android:background="@color/white"
-            android:layout_marginBottom="1dp"
+            android:id="@+id/txt_shop_des_phone"
+
+            android:background="@color/gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp5"
+            android:padding="@dimen/dp10"
             android:text="PhoneNumber: 0942148362"
-            android:textColor="@color/text_flight"
-            android:textSize="@dimen/text_14sp" />
-
-        <TextView
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/dp5"
-            android:text="Description: If you can't explain it simply you don't understand it well enough.android:textColor="
-            android:textColor="@color/text_flight"
+            android:textColor="@color/black"
             android:textSize="@dimen/text_14sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/text_flight" />
-
+            android:background="@color/black" />
         <TextView
+            android:id="@+id/txt_shop_des_description"
+
             android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp5"
-            android:text="Comment"
-            android:textColor="@color/text_flight"
-            android:textSize="@dimen/text_14sp"
-            android:textStyle="bold" />
+            android:padding="@dimen/dp10"
+            android:text="Description: If you can't explain it simply you don't understand it well enough.android:textColor="
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15sp" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycle_comment_shop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-    </LinearLayout>
+
+
+
+         </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

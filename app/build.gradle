@@ -1,19 +1,50 @@
 apply plugin: 'com.android.application'
-
+// Realm
+apply plugin: 'realm-android'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "neo.com.noibaiairport"
+        applicationId "neo.com.noibai_airport"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    lintOptions {
+
+        checkReleaseBuilds false
+
+        // Or, if you prefer, you can continue to check for errors in release
+        //builds,
+        // but continue the build even when errors are found:
+
+        abortOnError false
+
+    }
+
     buildTypes {
         release {
+            aaptOptions.cruncherEnabled = false
+            aaptOptions.useNewCruncher = false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    android {
+        signingConfigs {
+            release {
+                storeFile file('D:/MYWORK/2018/Neo/Project/NOIBAI_AIRPORT/Build/noibaiairport_keystore.jks')
+                storePassword "quochuy@101"
+                keyAlias "noibaiairport_keystore"
+                keyPassword "quochuy@101"
+                v2SigningEnabled false
+            }
+        }
+        buildTypes {
+            release {
+                signingConfig signingConfigs.release
+            }
         }
     }
 }
@@ -44,5 +75,8 @@ dependencies {
     //firebase
     implementation 'com.google.firebase:firebase-core:15.0.2'
     implementation 'com.google.firebase:firebase-messaging:15.0.2'
+    // Realm
+    implementation 'io.realm:android-adapters:2.0.0'
+
 }
 apply plugin: 'com.google.gms.google-services'

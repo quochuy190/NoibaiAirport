@@ -6,7 +6,7 @@
     <string name="tab_service">Service</string>
     <string name="tab_shopdine">ShopsDine</string>
     <string name="tab_tuongtac">Tuongtac</string>
-    <string name="tab_menu">Menu</string>
+    <string name="tab_menu">More</string>
     <!--Back notification-->
     <string name="back_notification">Click again to exit</string>
     <!--ngôn ngữ-->
@@ -15,6 +15,8 @@
     <string name="txt_Vie">VietNam</string>
     <!--dialog change language-->
     <string name="txt_title_profile">Profile</string>
+    <string name="hotline"><u><b><i>1900636535</i></b></u></string>
+
     <string name="dialog_title">Language setting</string>
     <string name="dialog_message">Are you sure you want to change the language of the application</string>
     <string name="btn_ok">Ok</string>
@@ -25,18 +27,20 @@
     <!--flight-->
     <string name="txt_flight_schedule">Flight schedule</string>
     <string name="txt_airlines">Airlines information</string>
+
     <string name="txt_flight_checkin">Check-in online</string>
     <string name="txt_flight_booking">Flight booking online</string>
     <string name="txt_flight_instruction">Flight Instruction</string>
     <string name="txt_title_departures">Departures</string>
     <string name="txt_title_arrivals">Arrivals</string>
     <string name="txt_title_other">Other</string>
+    <string name="txt_title_follow">Flight Follow</string>
     <string name="txt_filght_search">Search</string>
     <string name="edt_filght_search"> Click for search</string>
-    <string name="edt_filght_id">Số hiệu máy bay</string>
-    <string name="edt_filght_address">Chọn điểm đến</string>
-    <string name="edt_filght_date">Hôm nay</string>
-    <string name="edt_filght_airline">Chọn hãng bay</string>
+    <string name="edt_filght_id">Flight Number</string>
+    <string name="edt_filght_address">Destination</string>
+    <string name="edt_filght_date">Today</string>
+    <string name="edt_filght_airline">Airline</string>
     <string name="btn_search">Search</string>
     <!--untranslatable-->
     <string name="language_english" translatable="false">English</string>
@@ -55,15 +59,102 @@
         <item>@string/language_vietnamese_code</item>
     </string-array>
     <!--title fragment menu-->
+    <string name="txt_hotline">Hotline</string>
     <string name="txt_loyalty_program">Loyalty program</string>
-    <string name="txt_evaluate">Evaluate and Comment</string>
+    <string name="txt_evaluate">Feedback</string>
     <string name="txt_about">About</string>
     <string name="txt_language">Language </string>
-    <string name="txt_map">Map</string>
+    <string name="title_feedback">Feedback</string>
+    <string name="txt_map">Station Map</string>
+    <string name="txt_baggage_lost">Baggage Lost Found</string>
+    <string name="txt_tax_refund">TAX Refund</string>
     <!--shops and dine-->
     <string name="txt_shops">Shops</string>
     <string name="txt_dine">Foot and Drinks</string>
 
     <!--title-->
     <string name="appbar_flightdetail">Flight Detail</string>
+
+    <string name="mesaage_error_search">No Result</string>
+    <string name="title_search">Flight Search</string>
+    <string name="title_checkin">Check-in Online</string>
+
+    <string name="departures"><u><b><i>Departures</i></b></u></string>
+    <string name="arrivals"><u><b><i>Arrivals</i></b></u></string>
+    <string name="hint_input_name_feedback">- Input Username</string>
+    <string name="hint_input_email_feedback">- Input Email</string>
+    <string name="text_register">Please enter your information to send and get feedback</string>
+    <string name="hint_user_register">Name (*)</string>
+    <string name="hint_email_register">Email (*)</string>
+    <string name="btn_comfirm">Comfirm</string>
+    <string name="switch_addfeedback">Allow Public</string>
+    <string name="txt_title_answer"> ---------    Answer    ---------</string>
+    <string name="tab_thutucbay">Passenger Guide</string>
+    <string name="tab_hanhly">Baggage and Personal Papers</string>
+    <!--shop-->
+    <string name="viewpage_shop_general">Infomation</string>
+    <string name="viewpage_shop_menu">Menu</string>
+    <!--error-->
+    <string name="error_network">Connection Error</string>
+    <string name="error">Error</string>
+    <string name="error_network_message">Connection error, please check the network and try again</string>
+    <!--service detail-->
+    <string name="terminal">Terminal </string>
+    <string name="floor">Floor </string>
+    <string name="area">Area </string>
+    <string name="phone">Phone</string>
+    <string name="price">Price </string>
+    <string name="description">Description: </string>
+    <string name="title_service_detail">Detail Service</string>
+    <string name="time_table">Timetable </string>
+    <string name="title_activity_main_airline_detail">MainAirlineDetail</string>
+    <!--airline_detail-->
+    <string name="location">Location: </string>
+    <string name="hotline_airline">Hotline: </string>
+    <string name="check_in">Check-in </string>
+    <string name="booking">Booking </string>
+    <string name="list_destination">Destination List</string>
+    <string name="title_airline_detail">Airline Detail</string>
+
+    <string name="title_search_airline">List Airline</string>
+    <string name="title_search_airport">List Airport</string>
+    <string name="txt_comment">Comments</string>
+    <string name="txt_like">Like</string>
+    <string name="btn_load_earlier">Load Earlier Flight</string>
+
+
+    <!--Search Flight-->
+    <string name="edt_search_airport_arrivals">Origin</string>
+    <string name="edt_search_airport_departures">Destination</string>
+    <string name="edt_search_airline_departures">Airline</string>
+    <string name="hint_search">Search</string>
+
+    <!--Flight Detail-->
+    <string name="estimate">Estimate</string>
+    <string name="destination">Distination</string>
+    <string name="check_in_counte">Checkin counter</string>
+    <string name="lobby">Lobby</string>
+    <string name="boarding">Boarding</string>
+    <string name="security">Security wating time</string>
+    <!--Product detail-->
+    <string name="suppliers">Suppliers:</string>
+    <!-- SCHEDULE_TIME-->
+    <string name="schedule_time">Schedule Time:</string>
+    <!--Flight follow-->
+    <string name="txt_flight_listfollow">Flight follow</string>
+    <string name="txt_flight_departure">Flight Departure</string>
+    <string name="txt_flight_arrivals">Flight Arrivals</string>
+    <!--Feedback-->
+    <string name="feedback_content">Thans you for contacting, We\'ll do my best to help you.
+        \n\nAfter we receives your feedback, we will answer as soon as posible
+        \n\nPlease let us know if you have any questions or need further assistance. We\'re happy to help
+        \n\nBest regards!
+    </string>
+    <string name="hello">Hello</string>
+    <string name="title_register">Register</string>
+    <string name="title_add_feedback">Add Feedback</string>
+    <string name="show_error_follow_flight">Follow Flight is successful</string>
+    <string name="show_failed_follw_flight">Flight tracking failed</string>
+    <string name="btn_track_flight">Track this flight</string>
+    <string name="btn_unfollow_flight">UnFollow</string>
 </resources>

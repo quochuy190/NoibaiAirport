@@ -20,14 +20,14 @@
         <TextView
             android:gravity="center"
             android:textColor="@color/white"
-            android:text="CÂY NƯỚC MIỄN PHÍ"
+            android:text="cây nước miễn phí"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:padding="@dimen/dp5"
             android:id="@+id/txt_item_objservice_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_15sp" />
+            android:textSize="@dimen/text_16sp" />
     </RelativeLayout>
 
 

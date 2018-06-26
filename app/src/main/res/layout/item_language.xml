@@ -4,23 +4,31 @@
     android:id="@+id/relative_contacts"
     android:layout_width="match_parent"
     android:background="@drawable/spr_item_language"
-    android:layout_height="@dimen/dp40"
+    android:layout_height="80dp"
     android:orientation="horizontal"
     >
 
 
     <!--  ListRow Left sied Thumbnail image -->
-
+    <ImageView
+        android:padding="@dimen/dp5"
+        android:id="@+id/img_flag"
+        android:layout_marginLeft="@dimen/dp5"
+        android:layout_centerVertical="true"
+        android:layout_width="80dp"
+        android:layout_height="60dp" />
 
     <!-- Title Of Song-->
     <TextView
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/img_flag"
         android:layout_marginLeft="@dimen/dp5"
         android:layout_centerVertical="true"
         android:id="@+id/txt_name_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="English"
-        android:textColor="@color/black"
+        android:textColor="@color/text_flight"
         android:textSize="@dimen/text_17sp"
         android:typeface="sans" />
 

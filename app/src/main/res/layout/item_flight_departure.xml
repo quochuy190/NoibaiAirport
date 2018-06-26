@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:paddingTop="@dimen/dp5"
+    android:paddingBottom="@dimen/dp5"
+    android:background="@drawable/spr_item_language"
+    android:padding="@dimen/dp5">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txt_date_start_flight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:padding="@dimen/dp2"
+            android:text="22/6/2018"
+            android:textColor="@color/text_day_flight"
+            android:textSize="@dimen/text_14sp"
+            />
+        <TextView
+            android:id="@+id/txt_time_start_flight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center_vertical|left"
+            android:padding="@dimen/dp2"
+            android:text="24:00"
+            android:textColor="@color/text_flight"
+            android:textSize="@dimen/text_time_flight"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/img_avata_flight"
+            app:layout_constraintTop_toBottomOf="@id/txt_date_start_flight"
+
+            />
+        <TextView
+            android:id="@+id/txt_estimate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:padding="@dimen/dp2"
+            android:text="@string/estimate"
+            android:textColor="@color/text_day_flight"
+            android:textSize="@dimen/text_14sp"
+     />
+
+        <TextView
+            android:id="@+id/txt_time_estimate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:padding="@dimen/dp2"
+            android:text="-"
+            android:textColor="@color/text_day_flight"
+            android:textSize="@dimen/text_14sp"
+   />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:id="@+id/txt_flight_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dp2"
+            android:text="VN1892"
+            android:textColor="@color/text_flight"
+            android:textSize="@dimen/text_15sp"
+
+            />
+        <ImageView
+            android:id="@+id/img_avata_flight"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/img_avata_airline_flight"
+            android:src="@drawable/img_default"
+            />
+        <TextView
+            android:id="@+id/txt_flight_checkin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:padding="@dimen/dp2"
+            android:text="-"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_15sp"
+            android:textStyle="italic"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txt_destination_flight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:padding="@dimen/dp2"
+            android:text="@string/destination"
+            android:textColor="@color/text_day_flight"
+            android:textSize="@dimen/text_14sp"
+ />
+
+        <TextView
+            android:id="@+id/txt_airport_flight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:gravity="center_vertical|right"
+            android:padding="@dimen/dp2"
+            android:singleLine="true"
+            android:text="-"
+            android:textColor="@color/text_flight"
+            android:textSize="@dimen/text_14sp"
+            />
+        <TextView
+            android:id="@+id/txt_timinal_flight_lable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical|right"
+            android:padding="@dimen/dp2"
+            android:singleLine="true"
+            android:text="@string/terminal"
+            android:textColor="@color/text_day_flight"
+            android:textSize="@dimen/text_14sp"
+            />
+        <TextView
+            android:id="@+id/txt_teminal_flight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical|right"
+            android:padding="@dimen/dp2"
+            android:singleLine="true"
+            android:text="-"
+            android:textColor="@color/text_day_flight"
+            android:textSize="@dimen/text_14sp"
+            />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

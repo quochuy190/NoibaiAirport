@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="neo.com.noibaiairport">
-    <uses-permission android:name="android.permission.INTERNET"/>
+    xmlns:tools="http://schemas.android.com/tools"
+    package="neo.com.noibai_airport">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".App"
@@ -10,25 +13,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:screenOrientation="portrait"
-            android:name=".View.Activity.MainActivity.MainActivity">
-
-        </activity>
+            android:name=".View.Activity.MainActivity.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".View.Activity.ActivityProfile">
-            
-        </activity>
+            android:name=".View.Fragment.FlightFragment.ActivityListResultSearchFlight"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".View.Activity.ActivityChangeLanguage">
-
-        </activity>
+            android:name=".View.Fragment.FragmentService.ActivityDetailProduct"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".Login.SplashScreen">
+            android:name=".View.Fragment.FlightFragment.ActivitySearchFlight"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".View.Activity.ActivityProfile"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".View.Activity.ActivityChangeLanguage"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Login.SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,20 +43,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".View.Activity.ActivityBooking">
-
-        </activity>
+            android:name=".View.Activity.ActivityBooking"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".View.Fragment.FlightFragment.ActivityFlightDetail">
-
-        </activity>
+            android:name=".View.Fragment.FlightFragment.ActivityFlightDetail"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:screenOrientation="portrait"
-            android:name=".View.Activity.ActivityShops.ActivityShops">
+            android:name=".View.Activity.ActivityShops.ActivityShops"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".View.Fragment.FragmentService.ActivityDetailService"
+            android:screenOrientation="portrait"></activity>
 
-        </activity>
         <service android:name=".Service.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -57,14 +62,74 @@
         </service>
         <activity
             android:screenOrientation="portrait"
-            android:name=".View.Activity.Feedback.ActivityFeedback">
+            android:name=".View.Activity.SearchUntils.ActivityListAirport_Search"/>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".View.Activity.SearchUntils.ActivityListAirline_Search"/>
+
+        <activity
+
+            android:name=".View.Activity.ActivityShops.ActivityComments"
+            android:screenOrientation="portrait" />
+        <activity
+
+            android:name=".View.Activity.Feedback.ActivityFeedback"
+            android:screenOrientation="portrait">
 
         </activity>
+        <activity
+            android:name=".View.Activity.Feedback.ActivityAddFeedback"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".View.Activity.Feedback.ActivityRegister"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".View.Activity.Feedback.ActivityDetailFeedback"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".View.Activity.ActivityFlight.ActivityCheckinOnline"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".View.Activity.ActivityFlight.ActivityFlightInstuction"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".View.Fragment.MenuFragment.ActivityMap"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".View.Activity.AirlineInfo.ActivityListAirline"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".View.Activity.AirlineInfo.ActivityAirlineDetail"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".View.Fragment.FragmentService.ActivityListProduct"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
         <service android:name=".Service.MyFirebaseIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
     </application>
 
 </manifest>
