@@ -22,6 +22,8 @@ public interface MainInterface {
                      String sVersionHDH, String sTokenKey);
         void get_All_Airline(String sUserId);
         void get_All_Airport(String sUserId);
+        void get_update_info(String sUserId, String sUserType, String sName, String sEmail, String sAppver ,
+                             String sDevice_model, String sTokenkey, String sDevice_Type, String sOs_Version);
     }
     interface View{
         void show_init(List<String> mLisErorr);

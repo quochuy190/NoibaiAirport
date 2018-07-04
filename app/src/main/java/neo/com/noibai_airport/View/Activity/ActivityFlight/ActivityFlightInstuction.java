@@ -71,9 +71,9 @@ public class ActivityFlightInstuction extends BaseActivity {
         adapter = new AdapterViewpager(getSupportFragmentManager());
         adapter.addFragment(new Fragment_Flight_Procedures(),departures);
         adapter.addFragment(new Fragment_Guide_Luggage(), arrivals);
-
         viewPager.setOffscreenPageLimit(2);
         viewPager.setAdapter(adapter);
+
         tabLayout.setupWithViewPager(viewPager);
     }
 

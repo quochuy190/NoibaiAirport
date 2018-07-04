@@ -49,7 +49,8 @@ public class FragmentUtil {
      */
     public static void replaceFragment(FragmentManager fragmentManager, @NonNull Fragment fragment,
                                        @Nullable Bundle data) {
-        showFragment(fragmentManager, fragment, false, data, null, false);
+        showFragment(fragmentManager, fragment, false, data, null,
+                false);
     }
 
     /**
@@ -74,7 +75,6 @@ public class FragmentUtil {
         //    DebugLog.e("bundle data:" + data);
         showFragmentLeftToRight(activity, fragment, true, data, null, true);
     }
-
 
     /**
      * Replace fragment in container (without add backstack)

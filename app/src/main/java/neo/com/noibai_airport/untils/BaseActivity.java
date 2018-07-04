@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
 import butterknife.ButterKnife;
+import neo.com.noibai_airport.R;
 
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -55,12 +56,27 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // continue with delete
-
                     }
                 })
                 .show();
 
+    }
 
+    public void showAlertErrorNetwork() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Light_Dialog_Alert);
+        } else
+            builder = new AlertDialog.Builder(this);
+
+        builder.setTitle(getString(R.string.error_network))
+                .setCancelable(false)
+                .setMessage(getString(R.string.error_network_message))
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+                .show();
     }
 
     protected ProgressDialog dialog;
@@ -81,11 +97,11 @@ public abstract class BaseActivity extends AppCompatActivity {
                     dialog.dismiss();
                 }
             }
-        }, 20000);
+        }, 35000);
         if (!isFinishing()) {
             dialog = new ProgressDialog(this);
             dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            dialog.setMessage("Loading. Please wait...");
+            dialog.setMessage(getString(R.string.txt_loading_dialog));
             dialog.setIndeterminate(true);
             dialog.setCanceledOnTouchOutside(false);
         }
@@ -124,7 +140,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                     dialog.dismiss();
                 }
             }
-        }, 10000);
+        }, 35000);
         if (dialog == null) {
             dialog = new ProgressDialog(this);
             dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);

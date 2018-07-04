@@ -77,6 +77,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:15.0.2'
     // Realm
     implementation 'io.realm:android-adapters:2.0.0'
+    //okhttp3
+    compile 'com.squareup.okhttp3:okhttp:3.10.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

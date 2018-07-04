@@ -48,27 +48,28 @@ public class PresenterService implements ImlService.Presenter {
         mApiService.getApiService(new CallbackData<String>() {
             @Override
             public void onGetDataErrorFault(Exception e) {
-                Log.i(TAG, "onGetObjectDataSuccess: "+e);
-                view.show_error_api(new String());
+                Log.i(TAG, "onGetDataErrorFault: " + e.getMessage());
+                view.show_error_api("" + e.getMessage());
             }
+
             @Override
             public void onGetDataSuccess(String objT) {
                 Log.i(TAG, "onGetDataSuccess: " + objT);
                 try {
                     List<CategoryService> mCaService = CategoryService.getList(objT);
-                    if (mCaService.size()>0&&mCaService.get(0).getsERROR().equals("0000")){
+                    if (mCaService.size() > 0 && mCaService.get(0).getsERROR().equals("0000")) {
                         view.show_list_service(mCaService);
-                    }else {
-                        view.show_error_api(mCaService.get(0).getsMESSAGE());
+                    } else {
+                        view.show_list_service(null);
                     }
                 } catch (JSONException e) {
-                    view.show_error_api(new String());
+                    view.show_error_api("" + e.getMessage());
                     e.printStackTrace();
-                   // view.show_error_addfeedback();
-                    Log.i(TAG, "Log_error_api_filght: " + e);
+
+                    Log.i(TAG, "Log_error_api_filght: " + e.getMessage());
                 }
             }
-        },mMap);
+        }, mMap);
     }
 
     @Override
@@ -84,27 +85,27 @@ public class PresenterService implements ImlService.Presenter {
             @Override
             public void onGetDataErrorFault(Exception e) {
                 view.show_error_api(new String());
-                Log.i(TAG, "onGetObjectDataSuccess: "+e);
+                Log.i(TAG, "onGetObjectDataSuccess: " + e.getMessage());
             }
+
             @Override
             public void onGetDataSuccess(String objT) {
                 Log.i(TAG, "onGetDataSuccess: " + objT);
                 try {
                     List<CategoryShops> mCaService = CategoryShops.getList(objT);
-                    if (mCaService.size()>0&&mCaService.get(0).getsERROR().equals("0000")){
+                    if (mCaService.size() > 0 && mCaService.get(0).getsERROR().equals("0000")) {
                         view.show_list_shop(mCaService);
-                    }else {
+                    } else {
                         view.show_error_api(mCaService.get(0).getsMESSAGE());
                     }
                 } catch (JSONException e) {
 
                     e.printStackTrace();
                     view.show_error_api(new String());
-                    // view.show_error_addfeedback();
-                    Log.i(TAG, "Log_error_api_filght: " + e);
+                    Log.i(TAG, "Log_error_api_filght: " + e.getMessage());
                 }
             }
-        },mMap);
+        }, mMap);
     }
 
     @Override
@@ -119,17 +120,18 @@ public class PresenterService implements ImlService.Presenter {
         mApiService.getApiService(new CallbackData<String>() {
             @Override
             public void onGetDataErrorFault(Exception e) {
-                Log.i(TAG, "onGetObjectDataSuccess: "+e);
+                Log.i(TAG, "onGetObjectDataSuccess: " + e);
                 view.show_error_api(new String());
             }
+
             @Override
             public void onGetDataSuccess(String objT) {
                 Log.i(TAG, "onGetDataSuccess: " + objT);
                 try {
                     List<ObjMenu> mCaService = ObjMenu.getList(objT);
-                    if (mCaService.size()>0&&mCaService.get(0).getsERROR().equals("0000")){
+                    if (mCaService.size() > 0 && mCaService.get(0).getsERROR().equals("0000")) {
                         view.show_list_menu_shop(mCaService);
-                    }else {
+                    } else {
                         view.show_error_api(mCaService.get(0).getsMESSAGE());
                     }
                 } catch (JSONException e) {
@@ -139,7 +141,7 @@ public class PresenterService implements ImlService.Presenter {
                     Log.i(TAG, "Log_error_api_filght: " + e);
                 }
             }
-        },mMap);
+        }, mMap);
     }
 
     @Override
@@ -154,17 +156,18 @@ public class PresenterService implements ImlService.Presenter {
         mApiService.getApiService(new CallbackData<String>() {
             @Override
             public void onGetDataErrorFault(Exception e) {
-                Log.i(TAG, "onGetObjectDataSuccess: "+e);
+                Log.i(TAG, "onGetObjectDataSuccess: " + e);
                 view.show_error_api(new String());
             }
+
             @Override
             public void onGetDataSuccess(String objT) {
                 Log.i(TAG, "onGetDataSuccess: " + objT);
                 try {
                     List<Product> mCaService = Product.getList(objT);
-                    if (mCaService.size()>0&&mCaService.get(0).getsERROR().equals("0000")){
+                    if (mCaService.size() > 0 && mCaService.get(0).getsERROR().equals("0000")) {
                         view.show_list_product(mCaService);
-                    }else {
+                    } else {
                         view.show_error_api(mCaService.get(0).getsMESSAGE());
                     }
                 } catch (JSONException e) {
@@ -174,6 +177,6 @@ public class PresenterService implements ImlService.Presenter {
                     Log.i(TAG, "Log_error_api_filght: " + e);
                 }
             }
-        },mMap);
+        }, mMap);
     }
 }

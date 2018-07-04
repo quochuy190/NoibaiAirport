@@ -157,4 +157,22 @@
     <string name="show_failed_follw_flight">Flight tracking failed</string>
     <string name="btn_track_flight">Track this flight</string>
     <string name="btn_unfollow_flight">UnFollow</string>
+    <string name="txt_loading_dialog">Loading. Please wait...</string>
+
+    <string-array name="arr_terminal">
+        <item>Terminal</item>
+        <item>T1-Domestic Terminal</item>
+        <item>T2-International Terminal</item>
+    </string-array>
+    <string-array name="arr_floor">
+        <item>Floor</item>
+        <item>Floor 1</item>
+        <item>Floor 2</item>
+        <item>Floor 3</item>
+    </string-array>
+    <string-array name="arr_area">
+        <item>Area</item>
+        <item>Public Area</item>
+        <item>Passenger Area</item>
+    </string-array>
 </resources>

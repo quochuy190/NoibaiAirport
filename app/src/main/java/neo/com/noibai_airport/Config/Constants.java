@@ -22,6 +22,7 @@ public class Constants {
 
     public static final String KEY_TOKEN = "KEY_TOKEN";
     public static final String KEY_USERID = "KEY_USERID";
+    public static final String KEY_VERSION = "KEY_VERSION";
     public static final String KEY_SENT_SHOPS = "KEY_SENT_SHOPS";
     public static final String KEY_SENT_FLIGHT = "KEY_SENT_FLIGHT";
     public static final String KEY_SENT_FLIGHT_TYPE = "KEY_SENT_FLIGHT_TYPE";
@@ -43,4 +44,7 @@ public class Constants {
     public static final String FEEDBACK = "FEEDBACK";
     public static final String COMMENTS = "COMMENTS";
     public static final String KEY_SEND_DETAIL_PRODUCT = "KEY_SEND_DETAIL_PRODUCT";
+    public static final String KEY_SEND_NOTIFICATION_ID_FLIGHT = "KEY_SEND_NOTIFICATION_ID_FLIGHT";
+    public static final String KEY_SEND_NOTIFICATION_FLIGHT_TYPE = "KEY_SEND_NOTIFICATION_FLIGHT_TYPE";
+    public static final String KEY_SEND_FLIGHT_DATE = "KEY_SEND_FLIGHT_DATE";
 }

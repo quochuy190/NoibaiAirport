@@ -35,6 +35,7 @@ import neo.com.noibai_airport.View.Activity.MainActivity.MainActivity;
 import neo.com.noibai_airport.untils.BaseFragment;
 import neo.com.noibai_airport.untils.ItemClickListener;
 import neo.com.noibai_airport.untils.SharedPrefs;
+import neo.com.noibai_airport.untils.TimeUtils;
 import neo.com.noibai_airport.untils.setOnItemClickListener;
 
 import static neo.com.noibai_airport.Config.Constants.KEY_SENT_FLIGHT_TYPE;
@@ -327,6 +328,7 @@ public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.
     @Override
     public void show_get_api_error() {
         hideDialogLoading();
+        showAlertDialog(getString(R.string.error), getString(R.string.error_network_message));
     }
 
     @Override
@@ -334,13 +336,14 @@ public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (isNetwork()) {
+                if (isNetwork()){
                     mLisFlight.clear();
                     adapterCategory.notifyDataSetChanged();
                     isLoading = true;
                     btn_load_earlier.setVisibility(View.VISIBLE);
                     iPage = 1;
                     iPage_earlier = 1;
+                    showDialogLoading();
                     initData();
                 }
                 refesh_flight_info.setRefreshing(false);
@@ -354,18 +357,25 @@ public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.
         if (lisFlightRealm != null && lisFlightRealm.size() > 0) {
             int iCountFlightRealm = 0;
             for (int i = 0; i < lisFlightRealm.size(); i++) {
-                if (lisFlightRealm.get(i).getsFlightType() != null && lisFlightRealm.get(i).getsFlightType().equals("D")) {
-                    iCountFlightRealm++;
-                    mLisFollow.add(0, new FlightInfo(lisFlightRealm.get(i).getsERROR(), lisFlightRealm.get(i).getsMESSAGE(),
-                            lisFlightRealm.get(i).getsRESULT(), lisFlightRealm.get(i).getmFlight_Number(), lisFlightRealm.get(i).getmTime_departure(),
-                            lisFlightRealm.get(i).getmTime_departure_Estimation(), lisFlightRealm.get(i).getmTime_arrival(),
-                            lisFlightRealm.get(i).getmTime_arrival_Estimation(), lisFlightRealm.get(i).getmDay_start(), lisFlightRealm.get(i).getmDuration_time(),
-                            lisFlightRealm.get(i).getM_Notification(), lisFlightRealm.get(i).getmAirportDepartures(), lisFlightRealm.get(i).getmAirportArrivals(),
-                            lisFlightRealm.get(i).getmNameAriline(), lisFlightRealm.get(i).getmCHECKINCOUTER(), lisFlightRealm.get(i).getmBOARDINGGATE(),
-                            lisFlightRealm.get(i).getmBELT(), lisFlightRealm.get(i).getmTERMINAL(), lisFlightRealm.get(i).getsFlightType(),
-                            false, "", lisFlightRealm.get(i).getmLOBBY(), lisFlightRealm.get(i)
-                            .getmAVATAR(), lisFlightRealm.get(i).getmNAME()));
+                boolean is_delete_follow= TimeUtils.compare_date_time(lisFlightRealm.get(i).getmDay_start(),
+                        "yyyy-MM-dd hh:mm:ss");
+                if (is_delete_follow){
+                    RealmController.getInstance().remove_flight(lisFlightRealm.get(i));
+                }else {
+                    if (lisFlightRealm.get(i).getsFlightType() != null && lisFlightRealm.get(i).getsFlightType().equals("D")) {
+                        iCountFlightRealm++;
+                        mLisFollow.add(0, new FlightInfo(lisFlightRealm.get(i).getsERROR(), lisFlightRealm.get(i).getsMESSAGE(),
+                                lisFlightRealm.get(i).getsRESULT(), lisFlightRealm.get(i).getmFlight_Number(), lisFlightRealm.get(i).getmTime_departure(),
+                                lisFlightRealm.get(i).getmTime_departure_Estimation(), lisFlightRealm.get(i).getmTime_arrival(),
+                                lisFlightRealm.get(i).getmTime_arrival_Estimation(), lisFlightRealm.get(i).getmDay_start(), lisFlightRealm.get(i).getmDuration_time(),
+                                lisFlightRealm.get(i).getM_Notification(), lisFlightRealm.get(i).getmAirportDepartures(), lisFlightRealm.get(i).getmAirportArrivals(),
+                                lisFlightRealm.get(i).getmNameAriline(), lisFlightRealm.get(i).getmCHECKINCOUTER(), lisFlightRealm.get(i).getmBOARDINGGATE(),
+                                lisFlightRealm.get(i).getmBELT(), lisFlightRealm.get(i).getmTERMINAL(), lisFlightRealm.get(i).getsFlightType(),
+                                false, "", lisFlightRealm.get(i).getmLOBBY(), lisFlightRealm.get(i)
+                                .getmAVATAR(), lisFlightRealm.get(i).getmNAME()));
+                    }
                 }
+
             }
             if (iCountFlightRealm > 0) {
                 mLisFollow.add(iCountFlightRealm, new FlightInfo("", "", "", "",

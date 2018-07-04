@@ -8,9 +8,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import butterknife.BindView;
+import neo.com.noibai_airport.BuildConfig;
 import neo.com.noibai_airport.Config.Constants;
+import neo.com.noibai_airport.Model.AirlineInfo;
+import neo.com.noibai_airport.Model.Airport;
 import neo.com.noibai_airport.R;
+import neo.com.noibai_airport.View.Activity.MainActivity.MainInterface;
+import neo.com.noibai_airport.View.Activity.MainActivity.MainPresenter;
 import neo.com.noibai_airport.untils.BaseActivity;
 import neo.com.noibai_airport.untils.SharedPrefs;
 
@@ -25,7 +32,7 @@ import neo.com.noibai_airport.untils.SharedPrefs;
  * @updated on ${Date}
  * @since 1.0
  */
-public class ActivityRegister extends BaseActivity {
+public class ActivityRegister extends BaseActivity implements MainInterface.View {
     @Override
     public int setContentViewId() {
         return R.layout.activity_register;
@@ -39,15 +46,18 @@ public class ActivityRegister extends BaseActivity {
     Button btn_comfirm_register;
     @BindView(R.id.btn_cancel_register)
     Button btn_cancel_register;
+    MainPresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mPresenter = new MainPresenter(this);
         initAppbar();
         initData();
         initEvent();
 
     }
+
     public void initAppbar() {
         ImageView img_search = findViewById(R.id.img_search);
         ImageView img_back = findViewById(R.id.img_back);
@@ -66,6 +76,7 @@ public class ActivityRegister extends BaseActivity {
         });
 
     }
+
     String sType;
 
     private void initData() {
@@ -81,6 +92,12 @@ public class ActivityRegister extends BaseActivity {
                     SharedPrefs.getInstance().put(Constants.KEY_IS_LOGIN_FEEDBACK, true);
                     SharedPrefs.getInstance().put(Constants.KEY_USER_FEEDBACK, edt_user_register.getText().toString());
                     SharedPrefs.getInstance().put(Constants.KEY_EMAIL_FEEDBACK, edt_email_register.getText().toString());
+                    String sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
+                    String sToken = SharedPrefs.getInstance().get(Constants.KEY_TOKEN, String.class);
+                    mPresenter.get_update_info(sUserId, "app", edt_user_register.getText().toString(),
+                            edt_email_register.getText().toString(), BuildConfig.VERSION_NAME,
+                            android.os.Build.BRAND + " " + android.os.Build.MODEL, sToken, "2",
+                            android.os.Build.VERSION.RELEASE);
                     if (sType.equals(Constants.FEEDBACK)) {
                         startActivity(new Intent(ActivityRegister.this, ActivityAddFeedback.class));
                         finish();
@@ -89,7 +106,7 @@ public class ActivityRegister extends BaseActivity {
                         finish();
                     } else finish();
 
-                } else showAlertDialog("Thông báo", "Bạn chưa nhập vào đủ thông tin");
+                } else showAlertDialog(getString(R.string.error), "Bạn chưa nhập vào đủ thông tin");
             }
         });
         btn_cancel_register.setOnClickListener(new View.OnClickListener() {
@@ -98,5 +115,25 @@ public class ActivityRegister extends BaseActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void show_init(List<String> mLisErorr) {
+
+    }
+
+    @Override
+    public void show_all_airline(List<AirlineInfo> lisAirline) {
+
+    }
+
+    @Override
+    public void show_all_airport(List<Airport> lisAirport) {
+
+    }
+
+    @Override
+    public void show_api_error() {
+
     }
 }

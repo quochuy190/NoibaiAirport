@@ -19,6 +19,7 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import neo.com.noibai_airport.App;
+import neo.com.noibai_airport.BuildConfig;
 import neo.com.noibai_airport.Config.Constants;
 import neo.com.noibai_airport.Model.AirlineInfo;
 import neo.com.noibai_airport.Model.Airport;
@@ -33,14 +34,16 @@ import neo.com.noibai_airport.untils.LanguageUtils;
 import neo.com.noibai_airport.untils.SharedPrefs;
 
 public class MainActivity extends BaseActivity implements MainInterface.View {
-    private static final String TAG = "c";
+    private static final String TAG = "MainActivity";
     public static MainActivity activity;
+
     public static synchronized MainActivity getInstance() {
         if (activity == null) {
             activity = new MainActivity();
         }
         return (activity);
     }
+
     public static BottomBar bottomBar;
     public static RelativeLayout relative_appbar_main;
     public static Context mContext;
@@ -64,7 +67,7 @@ public class MainActivity extends BaseActivity implements MainInterface.View {
         initAppbar();
         initBottomBar();
         initEvent();
-        mPresenter.getInit("", "", "","","","");
+        mPresenter.getInit("", "", "", "", "", "");
         // initData();
 
     }
@@ -73,7 +76,7 @@ public class MainActivity extends BaseActivity implements MainInterface.View {
     protected void onResume() {
         super.onResume();
         Log.i(TAG, "onResume: ");
-        if (SharedPrefs.getInstance().get(Constants.KEY_CHANGE_LANGUAGE, Boolean.class)){
+        if (SharedPrefs.getInstance().get(Constants.KEY_CHANGE_LANGUAGE, Boolean.class)) {
             SharedPrefs.getInstance().put(Constants.KEY_CHANGE_LANGUAGE, false);
             updateViewByLanguage();
         }
@@ -108,7 +111,16 @@ public class MainActivity extends BaseActivity implements MainInterface.View {
         relative_appbar_main = findViewById(R.id.relative_appbar_main);
         mPresenter = new MainPresenter(this);
         String sToken = SharedPrefs.getInstance().get(Constants.KEY_TOKEN, String.class);
-        Log.i(TAG, "init: "+sToken);
+        Log.i(TAG, "init: " + sToken);
+        String sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
+        String username = SharedPrefs.getInstance().get(Constants.KEY_USER_FEEDBACK, String.class);
+        String ver_app = SharedPrefs.getInstance().get(Constants.KEY_VERSION, String.class);
+        String email = SharedPrefs.getInstance().get(Constants.KEY_EMAIL_FEEDBACK, String.class);
+        if (!BuildConfig.VERSION_NAME.equals(ver_app)) {
+            mPresenter.get_update_info(sUserId, "app", username, email, BuildConfig.VERSION_NAME,
+                    android.os.Build.BRAND + " " + android.os.Build.MODEL, sToken, "2",
+                    android.os.Build.VERSION.RELEASE);
+        }
     }
 
 

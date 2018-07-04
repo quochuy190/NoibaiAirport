@@ -1,7 +1,5 @@
 package neo.com.noibai_airport.untils;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -12,10 +10,9 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import neo.com.noibai_airport.View.Activity.MainActivity.MainActivity;
 import neo.com.noibai_airport.R;
+import neo.com.noibai_airport.View.Activity.MainActivity.MainActivity;
 
 /**
  * Created by QQ on 7/17/2017.
@@ -66,46 +63,6 @@ public class CustomUtils {
         return result;
     }
 
-    public static boolean checkPhoneVina(String phoneNumber) {
-        List<String> vina10 = new ArrayList<>();
-        vina10.add("091");
-        vina10.add("094");
-        List<String> vina11 = new ArrayList<>();
-        //0123, 0124, 0125, 0127, 0129
-        vina11.add("0123");
-        vina11.add("0124");
-        vina11.add("0125");
-        vina11.add("0127");
-        vina11.add("0129");
-
-        if (phoneNumber.length() == 10) {
-            String dauso = phoneNumber.substring(0, 3);
-            for (int i = 0; i < vina10.size(); i++) {
-                if (dauso.equals(vina10.get(i)))
-                    return true;
-            }
-        } else if (phoneNumber.length() == 11) {
-            String dauso = phoneNumber.substring(0, 4);
-            for (int i = 0; i < vina11.size(); i++) {
-                if (dauso.equals(vina11.get(i)))
-                    return true;
-            }
-        } else
-            return false;
-
-        return false;
-    }
-
-    public void showDialog(Activity activity, String title, CharSequence message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-
-        if (title != null) builder.setTitle(title);
-
-        builder.setMessage(message);
-        builder.setPositiveButton("OK", null);
-        builder.setNegativeButton("Cancel", null);
-        builder.show();
-    }
 
     /**
      * Create and show a simple notification containing the DELIVERED GCM message.
@@ -133,4 +90,5 @@ public class CustomUtils {
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
+
 }

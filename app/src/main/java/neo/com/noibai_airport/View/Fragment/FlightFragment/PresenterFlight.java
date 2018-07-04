@@ -56,7 +56,7 @@ public class PresenterFlight implements ImlFlight.Presenter {
             @Override
             public void onGetDataErrorFault(Exception e) {
                 view.show_get_api_error();
-                Log.i(TAG, "onGetDataErrorFault: " + e);
+                Log.i(TAG, "onGetDataErrorFault: " + e.getMessage());
             }
             @Override
             public void onGetDataSuccess(String objT) {
@@ -71,12 +71,10 @@ public class PresenterFlight implements ImlFlight.Presenter {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     view.show_get_api_error();
-                    Log.i(TAG, "Log_error_api_filght: " + e);
+                    Log.i(TAG, "Log_error_api_filght: " + e.getMessage());
                 }
             }
         }, mMap);
-
-
     }
 
     @Override
@@ -101,7 +99,7 @@ public class PresenterFlight implements ImlFlight.Presenter {
             @Override
             public void onGetDataErrorFault(Exception e) {
                 view.show_get_api_error();
-                Log.i(TAG, "onGetDataErrorFault: " + e);
+                Log.i(TAG, "onGetDataErrorFault: " + e.getMessage());
             }
             @Override
             public void onGetDataSuccess(String objT) {
@@ -116,7 +114,7 @@ public class PresenterFlight implements ImlFlight.Presenter {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     view.show_get_api_error();
-                    Log.i(TAG, "Log_error_api_filght: " + e);
+                    Log.i(TAG, "Log_error_api_filght: " + e.getMessage());
                 }
             }
         }, mMap);
@@ -136,7 +134,7 @@ public class PresenterFlight implements ImlFlight.Presenter {
         mApiService.getApiService(new CallbackData<String>() {
             @Override
             public void onGetDataErrorFault(Exception e) {
-                Log.i(TAG, "onGetDataErrorFault: " + e);
+                Log.i(TAG, "onGetDataErrorFault: " + e.getMessage());
                 view.show_get_api_error();
             }
             @Override
@@ -152,7 +150,7 @@ public class PresenterFlight implements ImlFlight.Presenter {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     view.show_get_api_error();
-                    Log.i(TAG, "Log_error_api_filght: " + e);
+                    Log.i(TAG, "Log_error_api_filght: " + e.getMessage());
                 }
             }
         }, mMap);
@@ -191,14 +189,16 @@ public class PresenterFlight implements ImlFlight.Presenter {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    view.show_result_flightfollow_error(null);
-                    Log.i(TAG, "Log_error_api_filght: " + e);
+                    view.show_get_api_error();
+
+                    Log.i(TAG, "Log_error_api_filght: " + e.getMessage());
                 }
             }
 
             @Override
             public void onGetDataErrorFault(Exception e) {
-                view.show_result_flightfollow_error(null);
+                view.show_get_api_error();
+                Log.i(TAG, "onGetDataErrorFault: "+e.getMessage());
             }
         }, mMap);
     }

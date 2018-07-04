@@ -75,7 +75,6 @@ public class AdapterLanguage extends RecyclerView.Adapter<AdapterLanguage.Langua
             super(itemView);
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);
-
         }
 
         @Override

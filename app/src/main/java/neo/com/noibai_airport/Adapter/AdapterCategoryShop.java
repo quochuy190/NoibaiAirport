@@ -64,6 +64,10 @@ public class AdapterCategoryShop extends RecyclerView.Adapter<AdapterCategorySho
         }
     }
 
-
+    public void update_list(List<CategoryShops> list) {
+        mLisCateService.clear();
+        mLisCateService.addAll(list);
+        notifyDataSetChanged();
+    }
 
 }

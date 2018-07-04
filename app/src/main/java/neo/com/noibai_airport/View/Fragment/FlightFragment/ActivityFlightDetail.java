@@ -1,5 +1,6 @@
 package neo.com.noibai_airport.View.Fragment.FlightFragment;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -80,13 +81,14 @@ public class ActivityFlightDetail extends BaseActivity implements ImlFlight.View
     Date mCalendar = Calendar.getInstance().getTime();
     private FlightInfo mObjFlight;
     String sType;
+    String sDate;
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     String currentDateandTime = sdf.format(mCalendar);
     public Realm realm;
     public boolean isTrack = false;
     @BindView(R.id.txt_address_detail2)
     TextView txt_Terminal2;
-
+    String sFlightId;
     @Override
     public int setContentViewId() {
         return R.layout.fragment_flight_detail;
@@ -119,14 +121,25 @@ public class ActivityFlightDetail extends BaseActivity implements ImlFlight.View
     }
 
     private void initData() {
-        FlightInfo objFlight = (FlightInfo) getIntent().getSerializableExtra(Constants.KEY_SENT_FLIGHT);
-        sType = getIntent().getStringExtra(KEY_SENT_FLIGHT_TYPE);
-
-        sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
-        if (objFlight != null && objFlight.getmFlight_Number() != null) {
+        Intent intent = getIntent();
+        sFlightId = intent.getStringExtra(Constants.KEY_SEND_NOTIFICATION_ID_FLIGHT);
+        if (sFlightId!=null&&sFlightId.length()>0){
+            sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
+            sType = getIntent().getStringExtra(Constants.KEY_SEND_NOTIFICATION_FLIGHT_TYPE);
+            sDate = getIntent().getStringExtra(Constants.KEY_SEND_FLIGHT_DATE);
             showDialogLoading();
-            mPresenter.get_detail_flight(sUserId, objFlight.getsFlightType(),
-                    currentDateandTime, objFlight.getmFlight_Number());
+            mPresenter.get_detail_flight(sUserId, sType,
+                    sDate, sFlightId);
+        }else {
+            FlightInfo objFlight = (FlightInfo) getIntent().getSerializableExtra(Constants.KEY_SENT_FLIGHT);
+            sType = getIntent().getStringExtra(KEY_SENT_FLIGHT_TYPE);
+            sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
+            if (objFlight != null && objFlight.getmFlight_Number() != null) {
+                showDialogLoading();
+                mPresenter.get_detail_flight(sUserId, objFlight.getsFlightType(),
+                        TimeUtils.convent_date(objFlight.getmDay_start(),
+                                "yyyy-MM-dd hh:mm:ss", "dd/MM/yyyy"), objFlight.getmFlight_Number());
+            }
         }
     }
 

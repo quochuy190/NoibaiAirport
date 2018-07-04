@@ -222,11 +222,9 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
     }
 
     int iCountFlightRealm = 0;
-
     @Override
     public void show_list_filghtinfo(List<FlightInfo> lisFlight) {
         hideDialogLoading();
-
         if (lisFlight != null && lisFlight.size() > 0) {
             for (int i = 0; i < lisFlight.size(); i++) {
                 lisFlight.get(i).setsFlightType("A");
@@ -267,7 +265,6 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
                 mLisFlight.add(0, lisFlight.get(i));
             }
         }
-
         recycle_flight_info.scrollToPosition(0);
         adapterCategory.updateList(mLisFlight);
     }
@@ -303,6 +300,7 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
                     isLoading = true;
                     btn_load_earlier.setVisibility(View.VISIBLE);
                     iPage = 1;
+                    showDialogLoading();
                     initData();
                 }
                 refesh_flight_info.setRefreshing(false);

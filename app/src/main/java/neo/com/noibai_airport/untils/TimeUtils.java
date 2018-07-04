@@ -1,11 +1,13 @@
 package neo.com.noibai_airport.untils;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created with Android Studio.
@@ -50,5 +52,29 @@ public class TimeUtils {
 
         }
         return strDateTime;
+    }
+
+    public static boolean compare_date_time(String sDateinput, String fomatDateinput) {
+        long long_date1 = 0;
+        long long_date2 = 0;
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat(fomatDateinput);
+            Date date_1 = sdf.parse(sDateinput);
+            long_date1 = date_1.getTime();
+            // convent date 2
+            long_date2 = System.currentTimeMillis();
+            Date date = new Date(long_date2);
+            SimpleDateFormat df2 = new SimpleDateFormat(fomatDateinput);
+            String da = df2.format(date);
+            Log.i("abc", da);
+            //
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        long time = long_date2 - long_date1;
+        long hour = TimeUnit.HOURS.convert(time, TimeUnit.MILLISECONDS);
+        if (hour > 24) {
+            return true;
+        } else return false;
     }
 }

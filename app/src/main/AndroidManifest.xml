@@ -46,6 +46,7 @@
             android:name=".View.Activity.ActivityBooking"
             android:screenOrientation="portrait"></activity>
         <activity
+            android:launchMode="singleTop"
             android:name=".View.Fragment.FlightFragment.ActivityFlightDetail"
             android:screenOrientation="portrait"></activity>
         <activity
@@ -53,7 +54,9 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".View.Fragment.FragmentService.ActivityDetailService"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+
+        </activity>
 
         <service android:name=".Service.MyFirebaseMessagingService">
             <intent-filter>

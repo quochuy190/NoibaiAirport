@@ -101,8 +101,7 @@ public class ActivityAirlineDetail extends BaseActivity implements ImlAirlineInf
          //   txt_location_airlinedetail.setText(objAirline.getsAddress());
             Glide.with(this)
                     .load(objAirline.getsImage())
-                    //.placeholder(new ColorDrawable(Color.WHITE))
-                    //.placeholder(R.drawable.image)
+                    .error(R.drawable.icon_may_bay)
                     .into(img_banner_airline_detail);
         }
         if (objAirline.getsAIRLINEID()!=null){

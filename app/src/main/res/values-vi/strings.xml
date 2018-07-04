@@ -2,11 +2,6 @@
 <resources>
 
 
-
-
-
-
-
     <!--Eng-->
     <string name="app_name">NoibaiAirport</string>
     <string name="tab_home">Trang chủ</string>
@@ -44,7 +39,6 @@
     <string name="txt_title_departures">Chuyến bay đi </string>
     <string name="txt_title_arrivals">Chuyến bay đến</string>
     <string name="txt_title_other">Khác</string>
-
 
 
     <string name="txt_title_follow">Theo dõi chuyến bay</string>
@@ -168,4 +162,21 @@
     <string name="show_failed_follw_flight">Theo dõi chuyến bay không thành công</string>
     <string name="btn_track_flight">Theo dõi chuyến bay này</string>
     <string name="btn_unfollow_flight">Huỷ theo dõi chuyến bay</string>
+    <string name="txt_loading_dialog">Đang tải. Vui lòng đợi...</string>
+    <string-array name="arr_terminal">
+        <item>Nhà ga</item>
+        <item>T1-Ga quốc tế</item>
+        <item>T2-Ga quốc nội</item>
+    </string-array>
+    <string-array name="arr_floor">
+        <item>Tầng</item>
+        <item>Tầng 1</item>
+        <item>Tầng 2</item>
+        <item>Tầng 3</item>
+    </string-array>
+    <string-array name="arr_area">
+        <item>Khu vực</item>
+        <item>Khu vực công cộng</item>
+        <item>Khu vực hành khách</item>
+    </string-array>
 </resources>

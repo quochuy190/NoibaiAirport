@@ -71,6 +71,7 @@ public class MyFirebaseIDService extends FirebaseInstanceIdService implements Ma
     @Override
     public void show_init(List<String> mLisErorr) {
         SharedPrefs.getInstance().put(Constants.KEY_TOKEN, mToken);
+        SharedPrefs.getInstance().put(Constants.KEY_VERSION, BuildConfig.VERSION_NAME);
     }
 
     @Override

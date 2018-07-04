@@ -10,6 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +41,14 @@ public class FragmenService extends BaseFragment implements OnListenerItemClickO
     RecyclerView recycle_service_main;
     PresenterService mPresenter;
     private String sUserId;
-
+    @BindView(R.id.spn_teminal)
+    Spinner spn_teminal;
+    @BindView(R.id.spn_floor)
+    Spinner spn_floor;
+    @BindView(R.id.spn_area)
+    Spinner spn_area;
+    String sTerminal, sFloor, sArea;
+    boolean isAddFilter = true;
     public static synchronized FragmenService getInstance() {
         if (fragment == null) {
             fragment = new FragmenService();
@@ -63,8 +73,109 @@ public class FragmenService extends BaseFragment implements OnListenerItemClickO
         ButterKnife.bind(this, view);
         mPresenter = new PresenterService(this);
         init();
+        initSpiner();
         initData();
         return view;
+    }
+
+    private void initSpiner() {
+        ArrayAdapter<CharSequence> adapter_terminal = ArrayAdapter.createFromResource(getContext(),
+                R.array.arr_terminal, R.layout.item_spinner);
+        adapter_terminal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spn_teminal.setAdapter(adapter_terminal);
+        spn_teminal.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        sTerminal = "";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+                    case 1:
+                        sTerminal = "T1";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+                    case 2:
+                        sTerminal = "T2";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        // lọc theo tầng
+        ArrayAdapter<CharSequence> adapter_floor = ArrayAdapter.createFromResource(getContext(),
+                R.array.arr_floor,  R.layout.item_spinner);
+        adapter_floor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spn_floor.setAdapter(adapter_floor);
+        spn_floor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        sFloor = "";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+                    case 1:
+                        sFloor = "1";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+                    case 2:
+                        sFloor = "2";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+                    case 3:
+                        sFloor = "3";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+
+                    case 4:
+                        sFloor = "4";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        ArrayAdapter<CharSequence> adapter_area = ArrayAdapter.createFromResource(getContext(),
+                R.array.arr_area,  R.layout.item_spinner);
+        adapter_area.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spn_area.setAdapter(adapter_area);
+        spn_area.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        sArea = "";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+                    case 1:
+                        sArea = "1";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+                    case 2:
+                        sArea = "0";
+                        filter_terminal(sTerminal, sFloor, sArea, App.lisCateService);
+                        break;
+
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     private void initData() {
@@ -97,7 +208,7 @@ public class FragmenService extends BaseFragment implements OnListenerItemClickO
 
     @Override
     public void onClickListener(Object objService) {
-        if (isNetwork()){
+        if (isNetwork()) {
             ObjService obj = (ObjService) objService;
             if (obj.getsMENUID().equals("0")) {
                 Intent intent = new Intent(getContext(), ActivityDetailService.class);
@@ -109,19 +220,21 @@ public class FragmenService extends BaseFragment implements OnListenerItemClickO
                 startActivity(intent);
             }
         }
-
-
     }
 
     @Override
     public void show_list_service(List<CategoryService> lisCaService) {
         hideDialogLoading();
-        if (lisCaService.size() > 0) {
-            mLisCateService.addAll(lisCaService);
-            adapter.notifyDataSetChanged();
-            App.lisCateService.clear();
-            App.lisCateService.addAll(lisCaService);
-            App.isLoadService = false;
+        if (lisCaService != null && lisCaService.size() > 0) {
+            if (lisCaService.get(0).getsERROR().equals("0000")) {
+                mLisCateService.addAll(lisCaService);
+                adapter.notifyDataSetChanged();
+                App.lisCateService.clear();
+                App.lisCateService.addAll(lisCaService);
+                App.isLoadService = false;
+            } else {
+                showAlertDialog(getString(R.string.error), lisCaService.get(0).getsRESULT());
+            }
         }
     }
 
@@ -133,7 +246,7 @@ public class FragmenService extends BaseFragment implements OnListenerItemClickO
     @Override
     public void show_error_api(String sMessage) {
         hideDialogLoading();
-
+        showAlertErrorNetwork();
     }
 
     @Override
@@ -144,5 +257,40 @@ public class FragmenService extends BaseFragment implements OnListenerItemClickO
     @Override
     public void show_list_product(List<Product> lisProduct) {
         hideDialogLoading();
+    }
+    // Lọc danh sách dịch vụ theo nhà ga
+    private void filter_terminal(String sTerminal, String sFloor, String sArea, List<CategoryService> lisCategory) {
+        isAddFilter = true;
+        mLisCateService.clear();
+        for (int i = 0; i < lisCategory.size(); i++) {
+            CategoryService objCateShop = new CategoryService();
+            if (lisCategory.get(i).getmLisObjSer() != null && lisCategory.get(i).getmLisObjSer().size() > 0) {
+                List<ObjService> lisShopDinne = new ArrayList<>();
+                for (int j = 0; j < lisCategory.get(i).getmLisObjSer().size(); j++) {
+                    isAddFilter = true;
+                    if (sTerminal.length() > 0 &&
+                            lisCategory.get(i).getmLisObjSer().get(j).getsTERMINAL().indexOf(sTerminal) < 0) {
+                        isAddFilter = false;
+                    }
+                    if (sFloor.length() > 0 &&
+                            lisCategory.get(i).getmLisObjSer().get(j).getsFLOOR().indexOf(sFloor) < 0) {
+                        isAddFilter = false;
+                    }
+                    if (sArea.length() > 0 &&
+                            lisCategory.get(i).getmLisObjSer().get(j).getsAREA().indexOf(sArea) < 0) {
+                        isAddFilter = false;
+                    }
+                    if (isAddFilter){
+                        lisShopDinne.add(lisCategory.get(i).getmLisObjSer().get(j));
+                    }
+                }
+                if (lisShopDinne.size() > 0) {
+                    objCateShop.setmName(lisCategory.get(i).getmName());
+                    objCateShop.setmLisObjSer(lisShopDinne);
+                    mLisCateService.add(objCateShop);
+                }
+            }
+        }
+        adapter.notifyDataSetChanged();
     }
 }

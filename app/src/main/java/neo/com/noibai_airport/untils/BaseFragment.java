@@ -91,7 +91,7 @@ public class BaseFragment extends Fragment {
                     dialog.dismiss();
                 }
             }
-        }, 5000);
+        }, 35000);
         if (!getActivity().isFinishing()) {
             dialog = new ProgressDialog(getActivity());
             dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -116,7 +116,8 @@ public class BaseFragment extends Fragment {
         if (dialog == null) {
             dialog = new ProgressDialog(getActivity());
             dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            dialog.setMessage("Loading. Please wait...");
+
+            dialog.setMessage(getString(R.string.txt_loading_dialog));
             dialog.setIndeterminate(true);
             dialog.setCanceledOnTouchOutside(false);
         }
@@ -134,7 +135,7 @@ public class BaseFragment extends Fragment {
                     dialog.dismiss();
                 }
             }
-        }, 20000);
+        }, 35000);
         if (dialog == null) {
             dialog = new ProgressDialog(getActivity());
             dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -179,7 +180,22 @@ public class BaseFragment extends Fragment {
                     }
                 })
                 .show();
+    }
 
+    public void showAlertErrorNetwork() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(getContext(), android.R.style.Theme_DeviceDefault_Light_Dialog_Alert);
+        } else
+            builder = new AlertDialog.Builder(getContext());
 
+        builder.setTitle(getString(R.string.error_network))
+                .setCancelable(false)
+                .setMessage(getString(R.string.error_network_message))
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+                .show();
     }
 }
