@@ -61,7 +61,6 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="@dimen/text_16sp"
@@ -70,6 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/relative_comment" />
 
     <View
+        android:id="@+id/view_bottom_comment"
         android:background="@color/gray"
         android:layout_width="match_parent"
         android:layout_height="1dp"

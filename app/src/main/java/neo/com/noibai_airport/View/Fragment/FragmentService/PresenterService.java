@@ -179,4 +179,38 @@ public class PresenterService implements ImlService.Presenter {
             }
         }, mMap);
     }
+
+    @Override
+    public void api_access_log(String sUserId, String sFeature, String sIdservices, String sType) {
+        Map<String, String> mMap = new LinkedHashMap<>();
+        mMap.put("Service", "accesslog");
+        mMap.put("Provider", "default");
+        mMap.put("ParamSize", "4");
+        mMap.put("P1", sUserId);
+        mMap.put("P2", sFeature);
+        mMap.put("P3", sIdservices);
+        mMap.put("P4", sType);
+
+
+        mApiService.getApiService(new CallbackData<String>() {
+            @Override
+            public void onGetDataErrorFault(Exception e) {
+                Log.i(TAG, "onGetObjectDataSuccess: " + e);
+                view.show_error_api(new String());
+            }
+
+            @Override
+            public void onGetDataSuccess(String objT) {
+                Log.i(TAG, "onGetDataSuccess: " + objT);
+                try {
+
+                } catch (Exception e) {
+                    view.show_error_api(new String());
+                    e.printStackTrace();
+                    // view.show_error_addfeedback();
+                    Log.i(TAG, "Log_error_api_filght: " + e);
+                }
+            }
+        }, mMap);
+    }
 }

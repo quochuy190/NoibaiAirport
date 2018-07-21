@@ -6,8 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import butterknife.BindView;
@@ -46,7 +51,17 @@ public class AdapterListAirline extends RecyclerView.Adapter<AdapterListAirline.
     public void onBindViewHolder(@NonNull LanguageViewHoder holder, int position) {
         AirlineInfo language = lisLanguage.get(position);
         holder.txt_name_airline.setText(language.getsName());
-
+        URL url = null;
+        if (language.getsImage() != null){
+            try {
+                url = new URL(language.getsImage());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            Glide.with(mContext).load(url)
+                    .error(R.drawable.img_default)
+                    .into(holder.ic_icon);
+        }
     }
 
     @Override
@@ -58,7 +73,8 @@ public class AdapterListAirline extends RecyclerView.Adapter<AdapterListAirline.
 
         @BindView(R.id.txt_name_airline)
         TextView txt_name_airline;
-
+        @BindView(R.id.ic_icon)
+        ImageView ic_icon;
 
         public LanguageViewHoder(View itemView) {
             super(itemView);

@@ -59,7 +59,7 @@ public class ActivityComments extends BaseActivity implements ImlComment.View {
                 if (edt_input_message.getText().toString().length() > 0) {
                     showDialogLoading();
                     mPresenter.add_comment(sUserId, sUserFeedback, sServiceId,
-                            edt_input_message.getText().toString(), "");
+                            edt_input_message.getText().toString(), "", "");
                 } else Toast.makeText(ActivityComments.this,
                         "Bạn chưa nhập vào thông tin", Toast.LENGTH_SHORT).show();
             }
@@ -72,7 +72,7 @@ public class ActivityComments extends BaseActivity implements ImlComment.View {
         sEmailFeedback = SharedPrefs.getInstance().get(Constants.KEY_EMAIL_FEEDBACK, String.class);
         sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
         showDialogLoading();
-        mPresenter.get_comment(sUserId, sServiceId);
+        mPresenter.get_comment(sUserId, sServiceId, "");
     }
 
     public void initAppbar() {
@@ -125,7 +125,7 @@ public class ActivityComments extends BaseActivity implements ImlComment.View {
        // hideDialogLoading();
         edt_input_message.setText("");
         KeyboardUtil.hideSoftKeyboard(this);
-        mPresenter.get_comment(sUserId, sServiceId);
+        mPresenter.get_comment(sUserId, sServiceId, "");
     }
 
     @Override

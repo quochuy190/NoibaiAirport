@@ -17,8 +17,8 @@ import neo.com.noibai_airport.Model.Comments;
  */
 public interface ImlComment {
     interface Presenter{
-        void get_comment(String sUserId, String sServiceId);
-        void add_comment(String sUserId, String sMemberid, String sServiceid,String sComment, String sStar);
+        void get_comment(String sUserId, String sServiceId, String subId);
+        void add_comment(String sUserId, String sMemberid, String sServiceid,String sComment, String sStar, String sSubid);
     }
     interface View{
         void show_list_comment(List<Comments> mLisComments);

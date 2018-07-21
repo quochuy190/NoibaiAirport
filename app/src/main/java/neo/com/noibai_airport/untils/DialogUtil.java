@@ -5,6 +5,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.widget.Button;
 
 
 /**
@@ -81,11 +86,31 @@ public class DialogUtil {
 
     ClickDialog clickDialog;
 
-    public static void ShowAlertDialogAnimationUpBottom2Button(Context context, String title, String mes, String titlebutton1, String titlebutton2, final ClickDialog clickDialog) {
+    public static void ShowAlertDialogAnimationUpBottom2Button(Context context, String title,
+                                                               String mes, String titlebutton1,
+                                                               String titlebutton2,
+                                                               final ClickDialog clickDialog) {
 
         AlertDialog.Builder b = new AlertDialog.Builder(context);
         b.setCancelable(false);
-        b.setTitle(title);
+        String titleText = "Say Hello!";
+
+        // Initialize a new foreground color span instance
+        ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Color.RED);
+
+        // Initialize a new spannable string builder instance
+        SpannableStringBuilder ssBuilder = new SpannableStringBuilder(title);
+
+        // Apply the text color span
+        ssBuilder.setSpan(
+                foregroundColorSpan,
+                0,
+                title.length(),
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
+
+        // Set the alert dialog title using spannable string builder
+        b.setTitle(ssBuilder);
         b.setMessage(mes);
         b.setPositiveButton(titlebutton1, new DialogInterface.OnClickListener() {
             @Override
@@ -104,8 +129,13 @@ public class DialogUtil {
         AlertDialog dialog = b.create();
 //        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation_2;
         dialog.show();
-
-
+       /* int dividerId = dialog.getContext().getResources().getIdentifier("android:id/titleDivider",
+                null, null);
+        View divider = dialog.findViewById(dividerId);
+        divider.setBackgroundColor(Color.parseColor("#f40616"));*/
+        Button negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+        // Change the alert dialog buttons text and background color
+        negativeButton.setTextColor(Color.parseColor("#f40616"));
     }
 
     public interface ClickDialog {

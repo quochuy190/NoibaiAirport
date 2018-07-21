@@ -19,9 +19,9 @@ import neo.com.noibai_airport.Model.FlightInfo;
 public interface ImlFlight {
     interface Presenter{
         void get_list_flight(String sUserId, String sFlightNo, String sLocation, String sDA_type,
-                             String sDatetime, String sAirline, String sLoad, String sPage, String sIndex);
+                             String sDatetime, String sAirline, String sLoad, String sPage, String sIndex, String sTerminal);
         void get_list_flight_earlier(String sUserId, String sFlightNo, String sLocation, String sDA_type,
-                             String sDatetime, String sAirline, String sLoad, String sPage, String sIndex);
+                             String sDatetime, String sAirline, String sLoad, String sPage, String sIndex, String sTerminal);
         void get_detail_flight(String sUserId, String sDAtype, String sDatetime, String sFlightNo);
         void set_follow_flight(String sUserId, String sDAtype, String sDatetime, String sStatus, String sFlightNo);
     }

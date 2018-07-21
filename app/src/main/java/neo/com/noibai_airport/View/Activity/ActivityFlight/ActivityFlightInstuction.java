@@ -67,7 +67,6 @@ public class ActivityFlightInstuction extends BaseActivity {
     private void setupViewPager(ViewPager viewPager) {
         String departures =  getString(R.string.tab_thutucbay);
         String arrivals =getString( R.string.tab_hanhly);
-
         adapter = new AdapterViewpager(getSupportFragmentManager());
         adapter.addFragment(new Fragment_Flight_Procedures(),departures);
         adapter.addFragment(new Fragment_Guide_Luggage(), arrivals);

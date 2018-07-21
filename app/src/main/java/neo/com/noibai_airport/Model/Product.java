@@ -15,6 +15,8 @@ import java.util.List;
 public class Product implements Serializable {
     @SerializedName("SERVICEID")
     private String mId;
+    @SerializedName("ID")
+    private String mIdProduct;
     @SerializedName("ERROR")
     String sERROR;
     @SerializedName("MESSAGE")
@@ -80,6 +82,14 @@ public class Product implements Serializable {
         arrayList = gson.fromJson(jsonArray, type);
 
         return arrayList;
+    }
+
+    public String getmIdProduct() {
+        return mIdProduct;
+    }
+
+    public void setmIdProduct(String mIdProduct) {
+        this.mIdProduct = mIdProduct;
     }
 
     public String getsSUPPLIERS() {

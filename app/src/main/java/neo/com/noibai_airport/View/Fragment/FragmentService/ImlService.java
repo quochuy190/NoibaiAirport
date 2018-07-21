@@ -24,6 +24,7 @@ public interface ImlService {
         void get_service_shops(String sUserId);
         void get_shop_menu(String sUserId, String sIdShop);
         void get_list_product(String sUserId, String sIdProduct);
+        void api_access_log(String sUserId, String sFeature, String sIdservices, String sType);
     }
     interface View{
         void show_list_service(List<CategoryService> lisCaService);

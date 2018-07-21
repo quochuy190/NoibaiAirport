@@ -45,6 +45,8 @@ public class AirlineInfo implements Serializable {
     String sPhone;
     @SerializedName("BOOKINGLINK")
     String sBOOKINGLINK;
+    @SerializedName("AIRLINE_TYPE")
+    String sAIRLINE_TYPE;
     public AirlineInfo(String sName, String sImage, String sAddress, String sPhone, String sUrl_Vi, String sUrl_En) {
         this.sName = sName;
         this.sImage = sImage;
@@ -156,5 +158,13 @@ public class AirlineInfo implements Serializable {
 
     public void setsPhone(String sPhone) {
         this.sPhone = sPhone;
+    }
+
+    public String getsAIRLINE_TYPE() {
+        return sAIRLINE_TYPE;
+    }
+
+    public void setsAIRLINE_TYPE(String sAIRLINE_TYPE) {
+        this.sAIRLINE_TYPE = sAIRLINE_TYPE;
     }
 }

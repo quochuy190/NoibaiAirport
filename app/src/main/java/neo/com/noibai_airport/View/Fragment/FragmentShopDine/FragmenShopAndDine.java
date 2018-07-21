@@ -230,6 +230,7 @@ public class FragmenShopAndDine extends BaseFragment implements OnListenerItemCl
     @Override
     public void onClickListener(Object objService) {
         ShopsDine obj = (ShopsDine) objService;
+        mPresenter.api_access_log(sUserId, "getshoplist|"+sUserId,obj.getmId(), "shop" );
         Intent intent = new Intent(getActivity(), ActivityShops.class);
         intent.putExtra(Constants.KEY_SENT_SHOPS, obj);
         startActivity(intent);

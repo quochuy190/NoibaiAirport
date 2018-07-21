@@ -5,18 +5,14 @@
     android:background="@color/gray"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp35"
-        android:background="@color/white"
-        android:src="@drawable/icon_logo" />
+
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="170dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/icon_may_bay" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/noi_bai" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -29,6 +25,7 @@
             android:padding="@dimen/dp2">
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/linear_hotline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -235,6 +232,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/ll_about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

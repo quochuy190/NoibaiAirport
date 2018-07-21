@@ -12,7 +12,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -63,8 +62,6 @@ public class FragmentSearchFlightArrivals extends BaseFragment
     Realm realm;
     boolean isLoading, isLoading_earlier = false;
     int pastVisiblesItems, visibleItemCount, totalItemCount;
-    @BindView(R.id.btn_load_earlier)
-    Button btn_load_earlier;
     private int iPage_earlier = 1;
 
     @Override
@@ -81,7 +78,6 @@ public class FragmentSearchFlightArrivals extends BaseFragment
         ButterKnife.bind(this, view);
         mPresenter = new PresenterFlight(this);
         realm = RealmController.with(this).getRealm();
-        btn_load_earlier.setVisibility(View.GONE);
         initPulltoRefresh();
         init();
         initData();
@@ -185,7 +181,7 @@ public class FragmentSearchFlightArrivals extends BaseFragment
         mPresenter.get_list_flight(sUserId, mObjSearch.getsFlightNumber(),
                 mObjSearch.getsFlightAirport(), "A", mObjSearch.getsFlightDatetime(),
                 mObjSearch.getsFlightAirline(),
-                "asc", "" + iPage, "" + iIndex);
+                "asc", "" + iPage, "" + iIndex, "T1");
     }
 
     private void initEvent() {
@@ -250,7 +246,6 @@ public class FragmentSearchFlightArrivals extends BaseFragment
                 mLisFlight.clear();
                 adapterCategory.notifyDataSetChanged();
                 isLoading = true;
-                btn_load_earlier.setVisibility(View.VISIBLE);
                 iPage = 1;
                 initData();
                 refesh_flight_info.setRefreshing(false);

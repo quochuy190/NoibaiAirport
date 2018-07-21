@@ -323,7 +323,7 @@ public class FragmentUtil {
         String backStateName = fragment.getClass().getName();
         FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
         transaction.replace(id, fragment);
-        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+       // transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         //transaction.addToBackStack(backStateName);
         transaction.commit();
     }

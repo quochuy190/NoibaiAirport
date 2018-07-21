@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import butterknife.BindView;
 import neo.com.noibai_airport.Adapter.AdapterViewpager;
 import neo.com.noibai_airport.Config.Constants;
@@ -100,8 +103,18 @@ public class ActivityShops extends BaseActivity {
     private void initData() {
         mObjShop = (ShopsDine) getIntent().getSerializableExtra(Constants.KEY_SENT_SHOPS);
         if (mObjShop != null) {
-            Glide.with(this).load(mObjShop.getmImage()).into(img_shop_main);
+            String urlStr = mObjShop.getmImage();
+            URL url=null;
+            try {
+                 url = new URL(urlStr);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            Glide.with(this).load(url)
+                    .error(R.drawable.img_default)
+                    .into(img_shop_main);
         }
+
 
     }
 

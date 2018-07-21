@@ -1,20 +1,13 @@
 package neo.com.noibai_airport.View.Fragment.MenuFragment;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +18,7 @@ import neo.com.noibai_airport.R;
 import neo.com.noibai_airport.View.Activity.ActivityBooking;
 import neo.com.noibai_airport.View.Activity.ActivityChangeLanguage;
 import neo.com.noibai_airport.View.Activity.Feedback.ActivityFeedback;
+import neo.com.noibai_airport.View.Activity.MainActivity.MainActivity;
 import neo.com.noibai_airport.untils.BaseFragment;
 import neo.com.noibai_airport.untils.SharedPrefs;
 
@@ -133,46 +127,11 @@ public class FragmentMenu extends BaseFragment {
         linear_hotline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Build.VERSION.SDK_INT < 23) {
-                    phoneCall( getString(R.string.hotline));
-                } else {
-                    if (ActivityCompat.checkSelfPermission(getContext(),
-                            Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-                        phoneCall(getString(R.string.hotline));
-                    } else {
-                        final String[] PERMISSIONS_STORAGE = {Manifest.permission.CALL_PHONE};
-                        //Asking request Permissions
-                        ActivityCompat.requestPermissions((Activity) getActivity(), PERMISSIONS_STORAGE, 9);
-                    }
-                }
+                MainActivity.call_phone(getContext(), getString(R.string.hotline));
             }
         });
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        boolean permissionGranted = false;
-        switch (requestCode) {
-            case 9:
-                permissionGranted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                break;
-        }
-        if (permissionGranted) {
-            phoneCall(getString(R.string.hotline));
-        } else {
-            Toast.makeText(getActivity(), "You don't assign permission.", Toast.LENGTH_SHORT).show();
-        }
-    }
 
-    private void phoneCall(String phone) {
-        if (ActivityCompat.checkSelfPermission(getActivity(),
-                Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-            Intent callIntent = new Intent(Intent.ACTION_CALL);
-            callIntent.setData(Uri.parse("tel:" + phone));
-            this.startActivity(callIntent);
-        } else {
-            Toast.makeText(getContext(), "You don't assign permission.", Toast.LENGTH_SHORT).show();
-        }
-    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

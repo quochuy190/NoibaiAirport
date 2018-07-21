@@ -6,6 +6,7 @@
     <string name="tab_service">Service</string>
     <string name="tab_shopdine">ShopsDine</string>
     <string name="tab_tuongtac">Tuongtac</string>
+    <string name="tab_together">Together</string>
     <string name="tab_menu">More</string>
     <!--Back notification-->
     <string name="back_notification">Click again to exit</string>
@@ -19,21 +20,23 @@
 
     <string name="dialog_title">Language setting</string>
     <string name="dialog_message">Are you sure you want to change the language of the application</string>
-    <string name="btn_ok">Ok</string>
+    <string name="btn_ok">OK</string>
     <string name="btn_cancel">Cancel</string>
     <!--change language-->
     <string name="change_language_title">Language</string>
 
     <!--flight-->
     <string name="txt_flight_schedule">Flight schedule</string>
-    <string name="txt_airlines">Airlines information</string>
+    <string name="txt_airlines">Airlines</string>
 
     <string name="txt_flight_checkin">Check-in online</string>
     <string name="txt_flight_booking">Flight booking online</string>
     <string name="txt_flight_instruction">Flight Instruction</string>
-    <string name="txt_title_departures">Departures</string>
-    <string name="txt_title_arrivals">Arrivals</string>
-    <string name="txt_title_other">Other</string>
+    <string name="txt_title_departures">Domestic Departures</string>
+    <string name="txt_title_arrivals">Domestic Arrivals</string>
+    <string name="txt_title_departures_t2">International Departures</string>
+    <string name="txt_title_arrivals_t2">International Arrivals</string>
+    <string name="txt_title_other">Utilities</string>
     <string name="txt_title_follow">Flight Follow</string>
     <string name="txt_filght_search">Search</string>
     <string name="edt_filght_search"> Click for search</string>
@@ -61,7 +64,7 @@
     <!--title fragment menu-->
     <string name="txt_hotline">Hotline</string>
     <string name="txt_loyalty_program">Loyalty program</string>
-    <string name="txt_evaluate">Feedback</string>
+    <string name="txt_evaluate">Feedback - Reflections</string>
     <string name="txt_about">About</string>
     <string name="txt_language">Language </string>
     <string name="title_feedback">Feedback</string>
@@ -131,7 +134,7 @@
 
     <!--Flight Detail-->
     <string name="estimate">Estimate</string>
-    <string name="destination">Distination</string>
+    <string name="destination">Destination</string>
     <string name="check_in_counte">Checkin counter</string>
     <string name="lobby">Lobby</string>
     <string name="boarding">Boarding</string>
@@ -175,4 +178,73 @@
         <item>Public Area</item>
         <item>Passenger Area</item>
     </string-array>
+    <string name="title_activity_fragment__together">Fragment_Together</string>
+
+    <!--Together-->
+    <string name="edt_serch_together_terminal">- Select terminal</string>
+    <string name="edt_serch_together_time">- Select time</string>
+    <string name="edt_destination">- Destination</string>
+    <string name="Sex">Gender: </string>
+    <string name="sex_all">All</string>
+    <string name="sex_male">Male</string>
+    <string name="sex_female">Female</string>
+    <string name="edt_serch_together_name">* Name</string>
+    <string name="edt_serch_together_phone">* Phone</string>
+    <string name="edt_serch_together_price">* Price Estimate</string>
+    <string name="edt_serch_together_quantity">Quantity</string>
+    <string name="edt_serch_together_description">- Input Description</string>
+    <string name="edt_serch_together_district">District</string>
+    <string name="edt_serch_together_wards">Wards </string>
+    <string name="item_together_time">Time: </string>
+    <string name="item_together_phone">Phone: </string>
+    <string name="item_together_gender">Gender: </string>
+    <string name="item_together_terminal">Terminal: </string>
+    <string name="item_together_district">Destination: </string>
+    <string name="item_together_wards">Ward: </string>
+    <string name="item_together_quantity">Quantity: </string>
+    <string name="title_add_together">Post New</string>
+    <string name="error_get_ward">You have not yet select district</string>
+    <string name="title_datetime">DateTime</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_update">Update</string>
+    <!--error-->
+    <string name="error_name_empty">You have not yet input name</string>
+    <string name="error_name_phone">You have not yet input phone</string>
+    <string name="error_name_time">You have not yet select time</string>
+    <string name="error_name_quantity">You have not yet select quantity</string>
+    <string name="error_name_district">You have not yet select district</string>
+    <string name="error_name_ward">You have not yet select ward</string>
+    <string name="error_name_gender">You have not yet select gender</string>
+    <string name="error_name_description">You have not yet input description</string>
+    <string name="error_time_false">You have not yet select time</string>
+
+    <!--notification add together-->
+    <string name="title_notify">Notify</string>
+    <string name="message_notify">Post new is successful</string>
+    <string name="message_delete">Delete new is successful</string>
+    <string name="message_update">Update new is successful</string>
+    <string name="message_delete_together">Do you want to delete the news</string>
+    <string name="error_time">Invalid time</string>
+    <string name="error_phone">Phone number is not formatted correctly</string>
+    <string name="btn_together_empty">No client expected. You can log a general found for more chi phí and out of more. Customer clients will be found</string>
+    <!--search new-->
+    <string name="title_search_new">Search new</string>
+    <string name="title_quantity">Quantity</string>
+    <string name="myorder">My Order</string>
+    <string name="all_order">All Order</string>
+    <string name="error_not_param">You have not entered a parameter</string>
+    <!--detail flight new-->
+    <string name="title_guide_flight">Track this flight to receive a notification whenever this flight status changes</string>
+    <string name="title_warning">Warning!</string>
+    <string name="message_warning">This is a utility provided by a third party. Noibai Airport is not responsible for the operation of this add-on</string>
+    <string name="tab_domestic">Domestic Airlines</string>
+    <string name="tab_international">International Airlines</string>
+    <string name="title_airline">Airlines</string>
+    <string name="message_warning_together">This is supported by the information information. You have a guest checker and check your task on active activity</string>
+    <string name="message_comfirm_order">Other passengers will see your post. Do you agree to share your contact information?</string>
+    <string name="title_information">Information</string>
+    <string name="title_destination">Destination</string>
+    <string name="title_requirement">Requirement</string>
+
+
 </resources>

@@ -13,6 +13,11 @@
         id="@+id/tab_booking"
         icon="@drawable/ic_shops"
         title="@string/tab_shopdine" />
+    <tab
+
+        id="@+id/tab_together"
+        icon="@drawable/ic_together"
+        title="@string/tab_together" />
 
     <tab
         id="@+id/tab_shopdine"

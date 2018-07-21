@@ -75,8 +75,10 @@ public class FragmentFlightHome extends BaseFragment {
 
     private void setupViewPager(ViewPager viewPager) {
         adapter = new AdapterViewpager(getChildFragmentManager());
-        adapter.addFragment(new FragmentFlightDepartures(), departures);
+        adapter.addFragment(new FragmentFlightDepartures_T1(), departures);
         adapter.addFragment(new FragmentFlightArrivals(), arrivals);
+        adapter.addFragment(new FragmentFlightDepartures_T2(), getString(R.string.txt_title_departures_t2));
+        adapter.addFragment(new FragmentFlightArrivals_T2(), getString(R.string.txt_title_arrivals_t2));
         adapter.addFragment(new FragmentFlight(), other);
         viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(adapter);

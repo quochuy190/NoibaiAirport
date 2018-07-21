@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ll_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/app_bar_main" />
+    </LinearLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_below="@+id/ll_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:background="@color/title_add_together"
+                    android:text="@string/title_information"
+                    android:textSize="@dimen/text_16sp"
+                    android:padding="@dimen/dp15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_margin="@dimen/dp10"
+                    android:id="@+id/input_layout_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:id="@+id/edt_name_add_togerther"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:backgroundTint="@color/text_flight"
+                        android:focusable="true"
+                        android:hint="@string/edt_serch_together_name"
+                        android:textCursorDrawable="@color/text_flight"
+                        android:textSize="@dimen/text_15sp" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_margin="@dimen/dp10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:id="@+id/edt_phone_add_togerther"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:backgroundTint="@color/text_flight"
+                        android:focusable="true"
+                        android:hint="@string/edt_serch_together_phone"
+                        android:textCursorDrawable="@color/text_flight"
+                        android:textSize="@dimen/text_15sp" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <EditText
+                    android:imeOptions="actionNext"
+                   android:layout_margin="@dimen/dp10"
+                    android:id="@+id/edt_time_search_together"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:backgroundTint="@color/text_flight"
+                    android:focusable="false"
+                    android:hint="@string/edt_serch_together_time"
+                    android:textCursorDrawable="@color/text_flight"
+                    android:textSize="@dimen/text_15sp" />
+                <RelativeLayout
+                    android:layout_margin="@dimen/dp10"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:textColor="@color/red"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/edt_price_add_togerther"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:backgroundTint="@color/text_flight"
+                            android:focusable="true"
+                            android:hint="@string/edt_serch_together_price"
+                            android:textCursorDrawable="@color/text_flight"
+                            android:textSize="@dimen/text_16sp" />
+                    </android.support.design.widget.TextInputLayout>
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dp5"
+                        android:textSize="@dimen/text_17sp"
+                        android:text="VND"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <TextView
+                    android:text="@string/title_destination"
+                    android:background="@color/title_add_together"
+
+                    android:textSize="@dimen/text_16sp"
+                    android:padding="@dimen/dp10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:imeOptions="actionNext"
+                    android:layout_margin="@dimen/dp10"
+                    android:id="@+id/edt_district_add_togerther"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:backgroundTint="@color/text_flight"
+                    android:focusable="false"
+                    android:hint="@string/edt_serch_together_district"
+                    android:textCursorDrawable="@color/text_flight"
+                    android:textSize="@dimen/text_15sp" />
+
+                <EditText
+                    android:layout_margin="@dimen/dp10"
+                    android:id="@+id/edt_ward_add_togerther"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:backgroundTint="@color/text_flight"
+                    android:focusable="false"
+                    android:hint="@string/edt_serch_together_wards"
+                    android:textCursorDrawable="@color/text_flight"
+                    android:textSize="@dimen/text_15sp" />
+
+
+                <TextView
+                    android:background="@color/title_add_together"
+                    android:text="@string/title_requirement"
+                    android:textSize="@dimen/text_16sp"
+                    android:padding="@dimen/dp10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_margin="@dimen/dp10"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Sex"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radio_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:onClick="onRadioButtonClicked"
+                            android:id="@+id/radio_sex_all"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/app_bar"
+                            android:singleLine="true"
+                            android:text="@string/sex_all"
+                            android:textSize="@dimen/text_13sp" />
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:onClick="onRadioButtonClicked"
+                            android:id="@+id/radio_sex_male"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/app_bar"
+                            android:singleLine="true"
+                            android:text="@string/sex_male"
+                            android:textSize="@dimen/text_13sp" />
+
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:onClick="onRadioButtonClicked"
+                            android:id="@+id/radio_sex_female"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/app_bar"
+                            android:singleLine="true"
+                            android:text="@string/sex_female"
+                            android:textSize="@dimen/text_13sp" />
+
+                    </RadioGroup>
+                </LinearLayout>
+                <EditText
+                    android:imeOptions="actionNext"
+                    android:layout_margin="@dimen/dp10"
+                    android:id="@+id/edt_quantity_add_togerther"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:backgroundTint="@color/text_flight"
+                    android:focusable="false"
+                    android:hint="@string/edt_serch_together_quantity"
+                    android:textCursorDrawable="@color/text_flight"
+                    android:textSize="@dimen/text_15sp" />
+
+                <EditText
+                    android:imeOptions="actionDone"
+                    android:layout_margin="@dimen/dp10"
+                    android:id="@+id/edt_add_together_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@drawable/spr_edittext_feedback"
+                    android:gravity="top"
+                    android:hint="@string/edt_serch_together_description"
+                    android:inputType="text|textMultiLine"
+                    android:padding="@dimen/dp5"
+                    android:textSize="@dimen/text_15sp" />
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:background="@color/white"
+                   android:layout_marginTop="@dimen/dp10"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:layout_marginRight="@dimen/dp5"
+                        android:id="@+id/btn_comfirm_delete_together"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/spr_button_tracked"
+                        android:text="@string/btn_delete"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_15sp" />
+                    <Button
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:layout_marginRight="@dimen/dp5"
+                        android:id="@+id/btn_comfirm_add_together"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/spr_button_track"
+                        android:text="@string/btn_comfirm"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_15sp" />
+                </LinearLayout>
+            </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</RelativeLayout>

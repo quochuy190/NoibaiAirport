@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="1dp"
+    android:layout_marginTop="1dp"
     android:paddingTop="@dimen/dp5"
     android:paddingBottom="@dimen/dp5"
     android:background="@drawable/spr_item_language"

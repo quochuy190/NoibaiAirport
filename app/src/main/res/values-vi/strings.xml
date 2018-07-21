@@ -10,6 +10,7 @@
     <string name="tab_service">Dịch vụ</string>
     <string name="tab_shopdine">Cửa hàng</string>
     <string name="tab_tuongtac">Tương tác</string>
+    <string name="tab_together">Đi chung</string>
     <string name="tab_menu">Thêm</string>
     <!--Back notification-->
     <string name="back_notification">Bấm thêm lần nữa để thoát</string>
@@ -32,13 +33,16 @@
     <!--flight-->
     <!--flight-->
     <string name="txt_flight_schedule">Lịch trình chuyến bay</string>
-    <string name="txt_airlines">Thông tin các hãng hàng không</string>
+    <string name="txt_airlines">Các hãng hàng không</string>
     <string name="txt_flight_checkin">Check-in trực tuyến</string>
-    <string name="txt_flight_booking">Mua vé máy bay trực tuyến</string>
+    <string name="txt_flight_booking">Đặt vé trực tuyến</string>
     <string name="txt_flight_instruction">Hướng dẫn quy định bay</string>
-    <string name="txt_title_departures">Chuyến bay đi </string>
-    <string name="txt_title_arrivals">Chuyến bay đến</string>
-    <string name="txt_title_other">Khác</string>
+    <string name="txt_title_departures">Nội địa đi</string>
+    <string name="txt_title_arrivals">Nội địa đến</string>
+    <string name="txt_title_departures_t2">Quốc tế đi</string>
+    <string name="txt_title_arrivals_t2">Quốc tế đến</string>
+    <string name="txt_title_other">Tiện ích</string>
+
 
 
     <string name="txt_title_follow">Theo dõi chuyến bay</string>
@@ -68,7 +72,7 @@
     <!--title fragment menu-->
     <!--title fragment menu-->
     <string name="txt_loyalty_program">Kết nối dài lâu</string>
-    <string name="txt_evaluate">Đánh giá góp ý</string>
+    <string name="txt_evaluate">Góp ý – Phản ánh</string>
     <string name="txt_about">Thông tin</string>
     <string name="txt_map">Bản đồ sân bay</string>
     <string name="txt_hotline">Hotline</string>
@@ -77,10 +81,8 @@
     <!--shops and dine-->
     <string name="txt_shops">Cửa hàng</string>
     <string name="txt_dine">Nhà hàng</string>
-
     <!--title-->
     <string name="appbar_flightdetail">Chi tiết chuyến bay</string>
-
     <string name="mesaage_error_search">Không có kết quả tìm kiếm</string>
     <string name="title_search">Tìm kiếm chuyến bay</string>
     <string name="title_checkin">Check-in Online</string>
@@ -179,4 +181,73 @@
         <item>Khu vực công cộng</item>
         <item>Khu vực hành khách</item>
     </string-array>
+
+    <string name="title_activity_fragment__together">Fragment_Together</string>
+
+    <!--Together-->
+    <string name="edt_serch_together_terminal">- Chọn nhà ga</string>
+    <string name="edt_serch_together_time">- Chọn thời gian</string>
+    <string name="edt_destination">- Điểm đến</string>
+    <string name="Sex">Giới tính: </string>
+    <string name="sex_all">Tất cả</string>
+    <string name="sex_male">Nam</string>
+    <string name="sex_female">Nữ</string>
+    <string name="edt_serch_together_name">* Tên</string>
+    <string name="edt_serch_together_phone">* Số điện thoại</string>
+    <string name="edt_serch_together_price">* Giá ước tính</string>
+    <string name="edt_serch_together_quantity">Số lượng</string>
+    <string name="edt_serch_together_description">- Nhập vào mô tả chi tiết</string>
+    <string name="edt_serch_together_district">Quận/Huyện</string>
+    <string name="edt_serch_together_wards">Phường/Xã </string>
+    <string name="item_together_time">Thời gian: </string>
+    <string name="item_together_phone">Số ĐT: </string>
+    <string name="item_together_gender">Giới tính: </string>
+    <string name="item_together_terminal">Nhà ga: </string>
+    <string name="item_together_district">Điểm đến: </string>
+    <string name="item_together_wards">Phường/Xã: </string>
+    <string name="item_together_quantity">Số lượng: </string>
+    <string name="title_add_together">Đăng tin mới</string>
+    <string name="error_get_ward">Bạn chưa chọn chọn phường muốn đến</string>
+    <string name="title_datetime">Ngày giờ</string>
+    <string name="btn_delete">Xoá</string>
+    <string name="btn_update">Cập nhật</string>
+    <!--error-->
+    <string name="error_name_empty">Bạn chưa nhập vào tên</string>
+    <string name="error_name_phone">Bạn chưa nhập vào số điện thoại liên hệ</string>
+    <string name="error_name_time">Bạn chưa chọn thời gian khởi hành</string>
+    <string name="error_name_quantity">Bạn chưa chọn số người muốn đi chung</string>
+    <string name="error_name_district">Bạn chưa chọn quận/huyện muốn đến</string>
+    <string name="error_name_ward">Bạn chưa chọn phường/xã muốn đến</string>
+    <string name="error_name_gender">Bạn chưa nhập vào giới tính</string>
+    <string name="error_name_description">Bạn chưa nhập vào mô tả chi tiết</string>
+    <string name="error_time_false">Bạn chưa nhập vào thời gian</string>
+
+    <!--notification add together-->
+    <string name="title_notify">Thông báo</string>
+    <string name="message_notify">Đăng tin mới thành công</string>
+    <string name="message_delete">Xoá bản tin thành công</string>
+    <string name="message_update">Cập nhật bản tin thành công</string>
+    <string name="message_delete_together">Bạn có muốn xoá bản tin này không?</string>
+    <string name="error_time">Thời gian không hợp lệ</string>
+    <string name="error_phone">Số điện thoại không đúng định dạng</string>
+    <string name="btn_together_empty">Không có hành khách nào đang đợi. Bạn có thể đăng một thông báo tìm người đi chung để chi sẻ chi phí và chuyến đi thú vị hơn. Các hành khách hành khách sẽ tìm thấy bạn</string>
+    <!--search new-->
+    <string name="title_search_new">Tìm kiếm bản tin</string>
+    <string name="title_quantity">Số lượng</string>
+    <string name="myorder">Bản tin của bạn</string>
+    <string name="all_order">Tất cả các bản tin</string>
+    <string name="error_not_param">Bạn chưa nhập vào tham số tìm kiếm</string>
+    <!--detail flight new-->
+    <string name="title_guide_flight">Theo dõi chuyến bay để nhận được thông báo mỗi khi có thay đổi tình trạng chuyến bay này</string>
+    <string name="title_warning">Cảnh báo!</string>
+    <string name="message_warning">Đây là tiện ích được cung cấp bởi đối tác thứ ba. Noibai Airport không chịu trách nhiệm về các hoạt động của tiện ích này.</string>
+    <string name="tab_domestic">Hãng bay nội địa</string>
+    <string name="tab_international">Hãng bay quốc tế</string>
+    <string name="title_airline">Các hãng bay</string>
+    <string name="message_warning_together">Đây là tiện ích hỗ trợ kết nối thông tin. Quý khách vui lòng tự kiểm tra và chịu trách nhiệm về hoạt động đi chung của mình</string>
+    <string name="message_comfirm_order">Các hành khách khác sẽ nhìn thấy thông tin đăng tải của bạn. Bạn có đồng ý chia sẻ thông tin liên lạc không?</string>
+    <string name="title_information">Thông tin</string>
+    <string name="title_destination">Điểm đến</string>
+    <string name="title_requirement">Yêu cầu</string>
+
 </resources>

@@ -40,13 +40,13 @@ import neo.com.noibai_airport.untils.setOnItemClickListener;
 
 import static neo.com.noibai_airport.Config.Constants.KEY_SENT_FLIGHT_TYPE;
 
-public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.View, SwipeRefreshLayout.OnRefreshListener {
+public class FragmentFlightDepartures_T1 extends BaseFragment implements ImlFlight.View, SwipeRefreshLayout.OnRefreshListener {
     private static final String TAG = "FragmentFlightDeparture";
-    public static FragmentFlightDepartures fragment;
+    public static FragmentFlightDepartures_T1 fragment;
 
-    public static synchronized FragmentFlightDepartures getInstance() {
+    public static synchronized FragmentFlightDepartures_T1 getInstance() {
         if (fragment == null) {
-            fragment = new FragmentFlightDepartures();
+            fragment = new FragmentFlightDepartures_T1();
         }
         return (fragment);
     }
@@ -134,8 +134,6 @@ public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.
     public List<FlightInfo> mLisFollow = new ArrayList<>();
 
     private void init() {
-        //   refesh_flight_info.setOnRefreshListener(this);
-
         adapterCategory = new AdapterFlightDeparture(mLisFlight, mLisFollow, getActivity());
         mLayoutManager = new GridLayoutManager(getContext(), 1);
         recycle_flight_info.setLayoutManager(mLayoutManager);
@@ -222,18 +220,20 @@ public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.
         sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
 
         mPresenter.get_list_flight(sUserId, "", "", "D", currentDateandTime, "",
-                "asc", "" + iPage, "" + iIndex);
+                "asc", "" + iPage, "" + iIndex, "T1");
     }
 
     private void initEvent() {
         MainActivity.img_search.setVisibility(View.VISIBLE);
-        MainActivity.img_search.setOnClickListener(new View.OnClickListener() {
+        MainActivity.img_chatbox.setVisibility(View.VISIBLE);
+
+        MainActivity.img_search.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), ActivitySearchFlight.class));
             }
         });
-        btn_load_earlier.setOnClickListener(new View.OnClickListener() {
+        /*btn_load_earlier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!isLoading_earlier) {
@@ -245,14 +245,14 @@ public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.
                         showDialogLoading();
                         mPresenter.get_list_flight_earlier(sUserId, "", "", "D",
                                 currentDateandTime, "",
-                                "desc", "" + iPage_earlier, "" + 20);
+                                "desc", "" + iPage_earlier, "" + iIndex, "T1");
                         isLoading_earlier = true;
                     }
                 }
 
 
             }
-        });
+        });*/
     }
 
 
@@ -294,7 +294,6 @@ public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.
         hideDialogLoading();
         if (lisFlight != null && lisFlight.size() > 0) {
             isLoading_earlier = false;
-            btn_load_earlier.setVisibility(View.VISIBLE);
             iPage_earlier = iPage_earlier + 1;
             for (int i = 0; i < lisFlight.size(); i++) {
                 lisFlight.get(i).setsFlightType("D");
@@ -336,7 +335,7 @@ public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (isNetwork()){
+              /*  if (isNetwork()){
                     mLisFlight.clear();
                     adapterCategory.notifyDataSetChanged();
                     isLoading = true;
@@ -345,6 +344,17 @@ public class FragmentFlightDepartures extends BaseFragment implements ImlFlight.
                     iPage_earlier = 1;
                     showDialogLoading();
                     initData();
+                }*/
+                if (isNetwork()) {
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    String currentDateandTime = sdf.format(mCalendar);
+                    sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
+                    showDialogLoading();
+                    mPresenter.get_list_flight_earlier(sUserId, "", "", "D",
+                            currentDateandTime, "",
+                            "desc", "" + iPage_earlier, "" + iIndex,
+                            "T1");
+                    isLoading_earlier = true;
                 }
                 refesh_flight_info.setRefreshing(false);
             }

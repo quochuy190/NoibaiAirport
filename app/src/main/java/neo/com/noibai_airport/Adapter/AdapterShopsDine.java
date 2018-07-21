@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import butterknife.BindView;
@@ -53,11 +55,19 @@ public class AdapterShopsDine extends RecyclerView.Adapter<AdapterShopsDine.Flig
     @Override
     public void onBindViewHolder(@NonNull FlightInfoViewHoder holder, int position) {
         ShopsDine objShops = mLisShopsDine.get(position);
-        if (objShops.getmImage() != null)
-            Glide.with(context).load(objShops.getmImage()).into(holder.img_Background);
+        URL url = null;
+        if (objShops.getmImage() != null){
+            try {
+                url = new URL(objShops.getmImage());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            Glide.with(context).load(url)
+                    .error(R.drawable.img_default)
+                    .into(holder.img_Background);
+        }
         if (objShops.getmName() != null)
             holder.txt_item_nem.setText(objShops.getmName());
-
     }
 
 

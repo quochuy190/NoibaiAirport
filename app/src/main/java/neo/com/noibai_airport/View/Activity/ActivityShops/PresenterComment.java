@@ -35,14 +35,14 @@ public class PresenterComment implements ImlComment.Presenter {
     }
 
     @Override
-    public void get_comment(String sUserId, String sServiceId) {
+    public void get_comment(String sUserId, String sServiceId, String sSubId) {
         Map<String, String> mMap = new LinkedHashMap<>();
         mMap.put("Service", "getcmservice");
         mMap.put("Provider", "default");
-        mMap.put("ParamSize", "2");
+        mMap.put("ParamSize", "3");
         mMap.put("P1", sUserId);
         mMap.put("P2", sServiceId);
-
+        mMap.put("P3", sSubId);
 
         mApiService.getApiService(new CallbackData<String>() {
             @Override
@@ -72,17 +72,18 @@ public class PresenterComment implements ImlComment.Presenter {
     }
 
     @Override
-    public void add_comment(String sUserId, String sMemberid, String sServiceid, String sComment, String sStar) {
+    public void add_comment(String sUserId, String sMemberid, String sServiceid,
+                            String sComment, String sStar,String sSubid) {
         Map<String, String> mMap = new LinkedHashMap<>();
         mMap.put("Service", "sendcmservice");
         mMap.put("Provider", "default");
-        mMap.put("ParamSize", "5");
+        mMap.put("ParamSize", "6");
         mMap.put("P1", sUserId);
         mMap.put("P2", sMemberid);
         mMap.put("P3", sServiceid);
         mMap.put("P4", sComment);
         mMap.put("P5", sStar);
-
+        mMap.put("P6", sSubid);
         mApiService.getApiService(new CallbackData<String>() {
             @Override
             public void onGetDataErrorFault(Exception e) {

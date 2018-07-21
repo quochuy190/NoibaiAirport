@@ -37,7 +37,8 @@ import neo.com.noibai_airport.untils.setOnItemClickListener;
 
 import static neo.com.noibai_airport.Config.Constants.KEY_SENT_FLIGHT_TYPE;
 
-public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.View, SwipeRefreshLayout.OnRefreshListener {
+public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.View,
+        SwipeRefreshLayout.OnRefreshListener {
 
     public static FragmentFlightArrivals fragment;
 
@@ -190,7 +191,7 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
         String currentDateandTime = sdf.format(mCalendar);
         sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
         mPresenter.get_list_flight(sUserId, "", "", "A", currentDateandTime, "",
-                "asc", "" + iPage, "" + iIndex);
+                "asc", "" + iPage, "" + iIndex, "T1");
     }
 
     private void initEvent() {
@@ -200,12 +201,11 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
                 startActivity(new Intent(getActivity(), ActivitySearchFlight.class));
             }
         });
-        btn_load_earlier.setOnClickListener(new View.OnClickListener() {
+      /*  btn_load_earlier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isNetwork()) {
                     if (!isLoading_earlier) {
-
                         btn_load_earlier.setVisibility(View.GONE);
                         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                         String currentDateandTime = sdf.format(mCalendar);
@@ -218,7 +218,7 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
                     }
                 }
             }
-        });
+        });*/
     }
 
     int iCountFlightRealm = 0;
@@ -236,9 +236,7 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
                 mLisFlight.addAll(lisFlight);
                 adapterCategory.notifyDataSetChanged();
             } else {
-
                 mLisFlight.clear();
-
                 mLisFlight.addAll(lisFlight);
                 adapterCategory.notifyDataSetChanged();
             }
@@ -257,7 +255,6 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
     public void show_list_filghtinfo_earlier(List<FlightInfo> lisFlight) {
         hideDialogLoading();
         if (lisFlight != null && lisFlight.size() > 0) {
-            btn_load_earlier.setVisibility(View.VISIBLE);
             isLoading_earlier = false;
             iPage_earlier = iPage_earlier + 1;
             for (int i = 0; i < lisFlight.size(); i++) {
@@ -294,7 +291,7 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (isNetwork()) {
+               /* if (isNetwork()) {
                     mLisFlight.clear();
                     adapterCategory.notifyDataSetChanged();
                     isLoading = true;
@@ -302,6 +299,19 @@ public class FragmentFlightArrivals extends BaseFragment implements ImlFlight.Vi
                     iPage = 1;
                     showDialogLoading();
                     initData();
+                }*/
+                if (isNetwork()) {
+                    if (!isLoading_earlier) {
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                        String currentDateandTime = sdf.format(mCalendar);
+                        sUserId = SharedPrefs.getInstance().get(Constants.KEY_USERID, String.class);
+                        showDialogLoading();
+                        mPresenter.get_list_flight_earlier(sUserId, "", "", "A",
+                                currentDateandTime, "",
+                                "desc", "" + iPage_earlier, "" + iIndex,
+                                "T1");
+                        isLoading_earlier = true;
+                    }
                 }
                 refesh_flight_info.setRefreshing(false);
             }

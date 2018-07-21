@@ -9,15 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/gray"
-        android:padding="8dp"
+        android:padding="@dimen/dp5"
         android:singleLine="true"
         android:text=""
         android:textColor="@color/text_flight"
-        android:textSize="@dimen/text_17sp"
+        android:textSize="@dimen/text_16sp"
         android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginLeft="@dimen/dp5"
         android:id="@+id/recycle_lis_objservice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

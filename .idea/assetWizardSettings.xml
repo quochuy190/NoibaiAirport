@@ -87,8 +87,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="icon_phone" />
-                            <entry key="sourceFile" value="C:\Users\QQ\Desktop\icon_phone.svg" />
+                            <entry key="outputName" value="ic_warning" />
+                            <entry key="sourceFile" value="C:\Users\QQ\Desktop\icon_noibaiairport\download.svg" />
                           </map>
                         </option>
                       </PersistentState>

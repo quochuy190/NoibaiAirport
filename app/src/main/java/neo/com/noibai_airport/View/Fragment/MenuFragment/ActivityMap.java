@@ -34,7 +34,7 @@ import neo.com.noibai_airport.untils.setOnItemClickListener;
  */
 public class ActivityMap extends BaseActivity {
     private static final String TAG = "ActivityMap";
-    @BindView(R.id.recycle_flight_info)
+    @BindView(R.id.recycle_list_service)
     RecyclerView recycle_flight_info;
     private String sUserId;
 
@@ -46,7 +46,7 @@ public class ActivityMap extends BaseActivity {
 
     @Override
     public int setContentViewId() {
-        return R.layout.activity_list_result_flight;
+        return R.layout.activity_recycleview;
     }
 
     @Override

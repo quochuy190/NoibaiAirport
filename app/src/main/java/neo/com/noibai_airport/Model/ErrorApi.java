@@ -18,7 +18,8 @@ public class ErrorApi {
     String sMESSAGE;
     @SerializedName("RESULT")
     String sRESULT;
-
+    @SerializedName("IDORDER")
+    String sDORDER;
     public ErrorApi() {
     }
     private static ErrorApi getObject (JSONObject jsonObject){
@@ -34,6 +35,15 @@ public class ErrorApi {
 
         return arrayList;
     }
+
+    public String getsDORDER() {
+        return sDORDER;
+    }
+
+    public void setsDORDER(String sDORDER) {
+        this.sDORDER = sDORDER;
+    }
+
     public String getsERROR() {
         return sERROR;
     }

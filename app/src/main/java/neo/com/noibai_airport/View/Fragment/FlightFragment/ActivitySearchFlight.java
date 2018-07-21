@@ -98,6 +98,16 @@ public class ActivitySearchFlight extends BaseActivity {
     }
 
     private void initEvent() {
+        edt_search_flightnumber.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    //edt_search_flightnumber.setHint("Label");
+                } else {
+                   // edt_search_flightnumber.setHint("Placeholder");
+                }
+            }
+        });
         txt_search_arrivals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

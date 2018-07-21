@@ -37,11 +37,11 @@ public class PresenterFlight implements ImlFlight.Presenter {
 
     @Override
     public void get_list_flight(String sUserId, String sFlightNo, String sLocation, String sDA_type,
-                                String sDatetime, String sAirline, String sLoad, String sPage, String sIndex) {
+                                String sDatetime, String sAirline, String sLoad, String sPage, String sIndex, String sTerminal) {
         Map<String, String> mMap = new LinkedHashMap<>();
         mMap.put("Service", "getlistflight");
         mMap.put("Provider", "default");
-        mMap.put("ParamSize", "9");
+        mMap.put("ParamSize", "10");
         mMap.put("P1", sUserId);
         mMap.put("P2", sFlightNo);
         mMap.put("P3", sLocation);
@@ -51,6 +51,7 @@ public class PresenterFlight implements ImlFlight.Presenter {
         mMap.put("P7", sLoad);
         mMap.put("P8", sPage);
         mMap.put("P9", sIndex);
+        mMap.put("P10", sTerminal);
 
         mApiService.getApiService(new CallbackData<String>() {
             @Override
@@ -80,11 +81,11 @@ public class PresenterFlight implements ImlFlight.Presenter {
     @Override
     public void get_list_flight_earlier(String sUserId, String sFlightNo, String sLocation,
                                         String sDA_type, String sDatetime, String sAirline,
-                                        String sLoad, String sPage, String sIndex) {
+                                        String sLoad, String sPage, String sIndex, String sTerminal) {
         Map<String, String> mMap = new LinkedHashMap<>();
         mMap.put("Service", "getlistflight");
         mMap.put("Provider", "default");
-        mMap.put("ParamSize", "9");
+        mMap.put("ParamSize", "10");
         mMap.put("P1", sUserId);
         mMap.put("P2", sFlightNo);
         mMap.put("P3", sLocation);
@@ -94,7 +95,7 @@ public class PresenterFlight implements ImlFlight.Presenter {
         mMap.put("P7", sLoad);
         mMap.put("P8", sPage);
         mMap.put("P9", sIndex);
-
+        mMap.put("P10",sTerminal);
         mApiService.getApiService(new CallbackData<String>() {
             @Override
             public void onGetDataErrorFault(Exception e) {

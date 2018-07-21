@@ -85,7 +85,7 @@ public class FragmentSearchFlightDepartures extends BaseFragment implements ImlF
         realm = RealmController.with(this).getRealm();
 
         init();
-        btn_load_earlier.setVisibility(View.GONE);
+
         initPulltoRefresh();
         initData();
         initEvent();
@@ -162,7 +162,7 @@ public class FragmentSearchFlightDepartures extends BaseFragment implements ImlF
         mPresenter.get_list_flight(sUserId, mObjSearch.getsFlightNumber(),
                 mObjSearch.getsFlightAirport(), "D", mObjSearch.getsFlightDatetime(),
                 mObjSearch.getsFlightAirline(),
-                "asc", "" + iPage, "" + iIndex);
+                "asc", "" + iPage, "" + iIndex, "");
     }
 
     private void initEvent() {
@@ -230,7 +230,7 @@ public class FragmentSearchFlightDepartures extends BaseFragment implements ImlF
                     mLisFlight.clear();
                     adapterCategory.notifyDataSetChanged();
                     isLoading = true;
-                    btn_load_earlier.setVisibility(View.VISIBLE);
+
                     iPage = 1;
                     iPage_earlier=1;
                     initData();

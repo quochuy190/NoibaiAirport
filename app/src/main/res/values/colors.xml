@@ -4,14 +4,16 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="red">#f40616</color>
+    <color name="red_warning">#8e0a13</color>
     <color name="blue_vietnamairline">#006886</color>
     <color name="color_lotus">#cacfce</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="text_flight">#283e6b</color>
     <color name="text_day_flight">#1582c3</color>
-    <color name="gray">#eeeff1</color>
+    <color name="gray">#dddee1</color>
     <color name="app_bar">#1582c3</color>
+    <color name="title_add_together">#70accf</color>
     <color name="bottom_bar">#B3B4B4</color>
     <color name="background_itemservice">#6b262626</color>
     <color name="view">#c7ccce</color>

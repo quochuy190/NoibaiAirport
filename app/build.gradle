@@ -7,8 +7,8 @@ android {
         applicationId "neo.com.noibai_airport"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
@@ -79,6 +79,8 @@ dependencies {
     implementation 'io.realm:android-adapters:2.0.0'
     //okhttp3
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
+    //date picker
+    compile 'com.github.florent37:singledateandtimepicker:2.0.5'
 
 }
 apply plugin: 'com.google.gms.google-services'

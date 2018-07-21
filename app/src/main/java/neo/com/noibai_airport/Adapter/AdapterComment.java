@@ -47,16 +47,19 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.Language
     @Override
     public void onBindViewHolder(@NonNull LanguageViewHoder holder, int position) {
         Comments language = lisLanguage.get(position);
-        if (language.getsCOMMENTS()!=null){
+        if (language.getsCOMMENTS() != null) {
             holder.txt_content_comment.setText(language.getsCOMMENTS());
         }
-        if (language.getsCOMMENTTIME()!=null){
+        if (language.getsCOMMENTTIME() != null) {
             holder.txt_time_comment.setText(TimeUtils.convent_date(language.getsCOMMENTTIME(),
                     "yyyy-MM-dd hh:mm:ss", "EEE, dd/MM/yyyy"));
         }
-        if (language.getsMEMBERID()!=null){
+        if (language.getsMEMBERID() != null) {
             holder.txt_UserName.setText(language.getsMEMBERID());
         }
+        if (position == lisLanguage.size() - 1) {
+            holder.view_bottom_comment.setVisibility(View.GONE);
+        } else holder.view_bottom_comment.setVisibility(View.VISIBLE);
 
     }
 
@@ -75,6 +78,8 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.Language
         TextView txt_UserName;
         @BindView(R.id.img_avata_comment)
         CircleImageView img_avata_comment;
+        @BindView(R.id.view_bottom_comment)
+        View view_bottom_comment;
 
         public LanguageViewHoder(View itemView) {
             super(itemView);

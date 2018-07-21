@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/spr_item_language">
@@ -10,29 +11,47 @@
         android:id="@+id/txt_name_airline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dp5"
-        android:gravity="center_vertical"
+        android:layout_below="@id/ic_icon"
+        android:gravity="center_vertical|center_horizontal"
         android:padding="@dimen/dp10"
         android:textColor="@color/text_flight"
-        android:textSize="@dimen/text_16sp" />
+        android:textSize="@dimen/text_16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic_icon" />
 
     <ImageView
-        android:layout_centerVertical="true"
+
         android:id="@+id/ic_icon"
-        android:layout_width="@dimen/dp30"
-        android:layout_height="@dimen/dp30"
-        android:layout_alignParentRight="true"
-        android:padding="@dimen/dp10"
-        android:src="@drawable/icon_detail" />
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp150"
+        android:padding="@dimen/dp5"
+        android:src="@drawable/ic_maybay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:layout_below="@id/txt_name_airline"
+        android:id="@+id/view_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_name_airline"
+        android:layout_above="@id/txt_name_airline"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginLeft="@dimen/dp5"
-        android:layout_marginRight="@dimen/dp5"
+        android:layout_below="@id/txt_name_airline"
+        android:background="@color/gray" />
+
+    <View
+        android:id="@+id/view_right"
+        app:layout_constraintBottom_toBottomOf="@id/txt_name_airline"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_below="@id/txt_name_airline"
         android:background="@color/gray"
- />
-</RelativeLayout>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ic_icon" />
+</android.support.constraint.ConstraintLayout>
 
 

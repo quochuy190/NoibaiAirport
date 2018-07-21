@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_bar_main" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="true"
+        android:padding="@dimen/dp15">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <EditText
+                android:id="@+id/edt_district_add_togerther"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dp10"
+                android:backgroundTint="@color/text_flight"
+                android:focusable="false"
+                android:hint="@string/edt_serch_together_district"
+                android:textCursorDrawable="@color/text_flight"
+                android:textSize="@dimen/text_15sp" />
+
+            <EditText
+                android:id="@+id/edt_ward_add_togerther"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dp10"
+                android:backgroundTint="@color/text_flight"
+                android:focusable="false"
+                android:hint="@string/edt_serch_together_wards"
+                android:textCursorDrawable="@color/text_flight"
+                android:textSize="@dimen/text_15sp" />
+
+            <EditText
+                android:id="@+id/edt_time_search_together"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dp10"
+                android:backgroundTint="@color/text_flight"
+                android:focusable="false"
+                android:hint="@string/edt_serch_together_time"
+                android:textCursorDrawable="@color/text_flight"
+                android:textSize="@dimen/text_15sp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Sex"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:onClick="onRadioButtonClicked"
+                        android:id="@+id/radio_sex_all"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/app_bar"
+                        android:singleLine="true"
+                        android:text="@string/sex_all"
+                        android:textSize="@dimen/text_13sp" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:onClick="onRadioButtonClicked"
+                        android:id="@+id/radio_sex_male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/app_bar"
+                        android:singleLine="true"
+                        android:text="@string/sex_male"
+                        android:textSize="@dimen/text_13sp" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:onClick="onRadioButtonClicked"
+                        android:id="@+id/radio_sex_female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/app_bar"
+                        android:singleLine="true"
+                        android:text="@string/sex_female"
+                        android:textSize="@dimen/text_13sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp30"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:layout_marginRight="@dimen/dp5"
+                    android:id="@+id/btn_comfirm_add_together"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/spr_button_track"
+                    android:text="@string/btn_search"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_15sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

@@ -210,6 +210,7 @@ public class FragmenService extends BaseFragment implements OnListenerItemClickO
     public void onClickListener(Object objService) {
         if (isNetwork()) {
             ObjService obj = (ObjService) objService;
+            mPresenter.api_access_log(sUserId, "getserviceslist|"+sUserId,obj.getmId(), "services" );
             if (obj.getsMENUID().equals("0")) {
                 Intent intent = new Intent(getContext(), ActivityDetailService.class);
                 intent.putExtra(Constants.KEY_SEND_DETAIL_SERVICE, obj);

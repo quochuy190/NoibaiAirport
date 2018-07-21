@@ -18,6 +18,11 @@ public class Constants {
         public static final int GET_AIRPORT = 10003;
         public static final int LOAD_FLIGHT_DEPARTURE = 10004;
         public static final int LOAD_FLIGHT_ARRIVALS = 10005;
+        public static final int GET_DISTRICT = 10006;
+        public static final int GET_WARD= 10007;
+        public static final int GET_QUANTITY= 10008;
+        public static final int ADD_TOGETHER= 10009;
+        public static final int SEARCH_TOGETHER= 10010;
     }
 
     public static final String KEY_TOKEN = "KEY_TOKEN";
@@ -47,4 +52,5 @@ public class Constants {
     public static final String KEY_SEND_NOTIFICATION_ID_FLIGHT = "KEY_SEND_NOTIFICATION_ID_FLIGHT";
     public static final String KEY_SEND_NOTIFICATION_FLIGHT_TYPE = "KEY_SEND_NOTIFICATION_FLIGHT_TYPE";
     public static final String KEY_SEND_FLIGHT_DATE = "KEY_SEND_FLIGHT_DATE";
+    public static final String KEY_SAVE_TOGETHER_ORDER = "KEY_SAVE_TOGETHER_ORDER";
 }

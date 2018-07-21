@@ -1,14 +1,21 @@
 package neo.com.noibai_airport.untils;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import butterknife.ButterKnife;
 import neo.com.noibai_airport.R;
@@ -166,5 +173,85 @@ public abstract class BaseActivity extends AppCompatActivity {
             return false;
         } else return true;
     }
+    public void showDialogWarning(String title, String message, boolean is_hide_cancel, final DialogUtil.ClickDialog clickDialog){
+        final Dialog dialog_yes = new Dialog(this);
+        dialog_yes.setCancelable(false);
+        dialog_yes.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog_yes.setContentView(R.layout.dialog_warning);
+        TextView txt_title = (TextView) dialog_yes.findViewById(R.id.txt_warning_title);
+        TextView txt_message = (TextView) dialog_yes.findViewById(R.id.txt_warning_message);
+        TextView btn_ok = (TextView) dialog_yes.findViewById(R.id.btn_warning_ok);
+        TextView btn_cancel = (TextView) dialog_yes.findViewById(R.id.btn_warning_cancel);
+        View view_warning = (View) dialog_yes.findViewById(R.id.view_warning);
+        txt_title.setText(title);
+        txt_message.setText(message);
+        // txt_buysongs.setText(Html.fromHtml("Để hoàn tất đăng ký dịch vụ RingTunes, Quý khách vui lòng thực hiện thao tác soạn tin nhắn <font color='#060606'>\"Y2 gửi 9194\"</font> từ số điện thoại giá cước: 3.000Đ/7 ngày. Cảm ơn Quý khách!"));
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog_yes.dismiss();
+                clickDialog.onClickYesDialog();
+            }
+        });
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog_yes.dismiss();
+                clickDialog.onClickNoDialog();
+            }
+        });
+        if (is_hide_cancel){
+            view_warning.setVisibility(View.GONE);
+            btn_cancel.setVisibility(View.GONE);
+        }else{
+            view_warning.setVisibility(View.VISIBLE);
+            btn_cancel.setVisibility(View.VISIBLE);
+        }
 
+        dialog_yes.show();
+        Window window = dialog_yes.getWindow();
+        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+    }
+
+    public void showDialogComfirm(String title, String message, boolean is_hide_cancel,
+                                  final DialogUtil.ClickDialog clickDialog){
+        final Dialog dialog_yes = new Dialog(this);
+        dialog_yes.setCancelable(false);
+        dialog_yes.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog_yes.setContentView(R.layout.dialog_warning);
+        dialog_yes.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView txt_title = (TextView) dialog_yes.findViewById(R.id.txt_warning_title);
+        ImageView img_warning = (ImageView) dialog_yes.findViewById(R.id.img_warning);
+        TextView txt_message = (TextView) dialog_yes.findViewById(R.id.txt_warning_message);
+        TextView btn_ok = (TextView) dialog_yes.findViewById(R.id.btn_warning_ok);
+        TextView btn_cancel = (TextView) dialog_yes.findViewById(R.id.btn_warning_cancel);
+        View view_warning = (View) dialog_yes.findViewById(R.id.view_warning);
+        txt_title.setText(title);
+        txt_message.setText(message);
+        img_warning.setVisibility(View.GONE);
+        // txt_buysongs.setText(Html.fromHtml("Để hoàn tất đăng ký dịch vụ RingTunes, Quý khách vui lòng thực hiện thao tác soạn tin nhắn <font color='#060606'>\"Y2 gửi 9194\"</font> từ số điện thoại giá cước: 3.000Đ/7 ngày. Cảm ơn Quý khách!"));
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog_yes.dismiss();
+                clickDialog.onClickYesDialog();
+            }
+        });
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog_yes.dismiss();
+                clickDialog.onClickNoDialog();
+            }
+        });
+        if (is_hide_cancel){
+            view_warning.setVisibility(View.GONE);
+            btn_cancel.setVisibility(View.GONE);
+        }else{
+            view_warning.setVisibility(View.VISIBLE);
+            btn_cancel.setVisibility(View.VISIBLE);
+        }
+        dialog_yes.show();
+
+    }
 }

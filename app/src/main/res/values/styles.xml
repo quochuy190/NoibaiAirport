@@ -24,10 +24,11 @@
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="text_tab_thongke">
-        <item name="android:textSize">15sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">11sp</item>
     </style>
-
+    <style name="text_tab_airline">
+        <item name="android:textSize">14sp</item>
+    </style>
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Text_Time" parent="TextAppearance.AppCompat">
